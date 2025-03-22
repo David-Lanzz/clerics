@@ -189,7 +189,7 @@ const Navbar = () => {
                                                                 ))
                                                             }, 100);
                                                         }} className="underline px-2 justify-between gap-4 items-center py-1 flex cursor-pointer" key={index}>
-                                                            {item?.title}
+                                                            {item?.name}
                                                             <FaChevronRight />
                                                         </span>
                                                     ))
