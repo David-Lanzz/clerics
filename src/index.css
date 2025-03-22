@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'stylish';
+    src: url('/stylish.otf');
+}
+
+@font-face {
+    font-family: 'montserat';
+    src: url('/Montserrat-VariableFont_wght.ttf');
+}
+
+* {
+    font-family: 'montserat';
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.classic {
+    font-family: 'stylish';
+}
+
+.standardBtn {
+    @apply p-3 px-6 bg-primary text-secondary border border-transparent
+}
+
+.standardBtnLight {
+    @apply p-3 px-6 bg-secondary text-primary border border-transparent
+}
+
+.slowMo {
+    @apply transition-all duration-500
+}
+
+.scroller::-webkit-scrollbar {
+    display: none !important;
+}
+
+button {
+    @apply font-medium
+}
