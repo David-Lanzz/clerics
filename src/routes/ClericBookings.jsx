@@ -60,10 +60,13 @@ const ClericBookings = () => {
                     <div className="flex gap-3 items-start text-gray-700">
                         <FaEnvelope className="mt-1 text-primary" />
                         <span id='messages' className="w-full pr-4 flex flex-col h-[10rem] flex-grow gap-4 overflow-auto">{selectedBooking?.message?.map((message, index) => (
-                            <span key={index} className={`flex flex-col gap-1`}>
-                                <p className={`font-medium ${message?.role === 'cleric' ? 'ml-auto' : null}`}>{message?.role === 'cleric' ? 'Cleric' : selectedBooking?.email}:</p>
-                                <p className={` ${message?.role === 'cleric' ? 'ml-auto' : null}`}>{message?.message}</p>
-                            </span>
+                            <>
+                            { message?  <span key={index} className={`flex flex-col gap-1`}>
+                                 <p className={`font-medium ${message?.role === 'cleric' ? 'ml-auto' : null}`}>{message?.role === 'cleric' ? 'Cleric' : selectedBooking?.email}:</p>
+                                 <p className={` ${message?.role === 'cleric' ? 'ml-auto' : null}`}>{message?.message}</p>
+                             </span>: null}
+                         </>
+
                         ))}
                             <Element name='lastmessage' />
                         </span>

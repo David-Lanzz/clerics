@@ -12,7 +12,7 @@ const UserBookings = () => {
     const [bookings, setBookings] = useState([])
     const { id } = useParams()
     const navigate = useNavigate()
-    
+
     useEffect(() => {
         console.log(id)
         if (!id || id === 'null') {
@@ -71,10 +71,12 @@ const UserBookings = () => {
                     <div className="flex gap-3 items-start text-gray-700">
                         <FaEnvelope className="mt-1 text-primary" />
                         <span id='messages' className="w-full flex pr-4 flex-col h-[10rem] flex-grow gap-4 overflow-auto">{selectedBooking?.message?.map((message, index) => (
-                            <span key={index} className={`flex flex-col gap-1`}>
-                                <p className={`font-medium ${message?.role === 'cleric' ? 'ml-auto' : null}`}>{message?.role === 'cleric' ? 'Cleric' : selectedBooking?.email}:</p>
-                                <p className={` ${message?.role === 'cleric' ? 'ml-auto' : null}`}>{message?.message}</p>
-                            </span>
+                            <>
+                               { message?  <span key={index} className={`flex flex-col gap-1`}>
+                                    <p className={`font-medium ${message?.role === 'cleric' ? 'ml-auto' : null}`}>{message?.role === 'cleric' ? 'Cleric' : selectedBooking?.email}:</p>
+                                    <p className={` ${message?.role === 'cleric' ? 'ml-auto' : null}`}>{message?.message}</p>
+                                </span>: null}
+                            </>
                         ))}
                             <Element name='lastmessage' />
                         </span>
