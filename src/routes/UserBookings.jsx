@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Element, scroller } from 'react-scroll'
 import { editBooking, getUserBookings } from '../services'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { FaChevronRight, FaClock, FaEnvelope } from 'react-icons/fa'
 import { FaX } from 'react-icons/fa6'
 import { RiSendPlane2Line } from 'react-icons/ri'
@@ -11,7 +11,14 @@ const UserBookings = () => {
 
     const [bookings, setBookings] = useState([])
     const { id } = useParams()
+    const navigate = useNavigate()
+    
     useEffect(() => {
+        console.log(id)
+        if (!id || id === 'null') {
+            console.log(id)
+            navigate('/login')
+        }
         getUserBookings(id).then(data => {
             setBookings(data?.bookings)
         })
