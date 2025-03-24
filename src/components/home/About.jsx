@@ -1,37 +1,60 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { scroller } from 'react-scroll'
+import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { scroller } from "react-scroll";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const About = () => {
+    const navigate = useNavigate();
+    const ref = useRef()
+    const { scrollYProgress } = useScroll({
+        offset: ['start end', 'end start'],
+        target: ref
+    });
 
-    const navigate = useNavigate()
+    // Parallax & zoom effect
+    const y = useTransform(scrollYProgress, [0, 1], [0, -100]); // Moves up slightly
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]); // Smooth zoom-in effect
 
     return (
-        <div className='w-full flex justify-center pl-4 md:pl-[4rem]'>
-            <div className="w-full max-w-[90rem] pl-0 md:pl-[4rem] justify-between flex flex-col md:flex-row gap-8">
-                <span className="flex flex-col gap-4 w-full md:w-1/2">
-                    <h3 className="text-2xl md:text-4xl font-semibold">ABOUT BOOK A MUSLIM TEACHER</h3>
-                    <p>At Book a Muslim Teacher, we connect you with knowledgeable Muslim teachers to guide you on your journey of learning Islam. Your spiritual growth and understanding are at the heart of our mission, where sincerity and dedication shape every step. We focus on providing authentic, high-quality education while ensuring a supportive and enriching learning experience. Our teachers are experienced, qualified, and committed to following Islamic principles, ensuring that you receive trustworthy and beneficial knowledge. When you learn with us, you’re not just gaining knowledge—you’re deepening your faith and strengthening your connection with Islam. Our goal is not just to teach, but to inspire and uplift you on your path to a meaningful and fulfilling Islamic life.</p>
-                    <p>Book your session today and embark on a journey to deepen your knowledge of Islam with a dedicated Muslim teacher.</p>
-                    <span className="flex gap-8 items-center">
-                        <button className="standardBtn" onClick={() => {
-                            navigate('/booking')
-                            setTimeout(() => {
-                                scroller.scrollTo('booking', { smooth: true, offset: -100 })
-                            }, 100);
-                        }}>Book Now</button>
-                        <button className="p-3 px-6 border border-primary" onClick={() => {
-                            navigate('/about')
-                            setTimeout(() => {
-                                scroller.scrollTo('about', { smooth: true, offset: -100 })
-                            }, 100);
-                        }}>Learn More</button>
-                    </span>
-                </span>
-                <img src="/about.png" className='' alt="" />
-            </div>
-        </div>
-    )
-}
+        <div ref={ref} className="relative w-full flex justify-center px-4 md:px-[4rem] py-[8rem] h-[120vh] max-h-[50rem] overflow-hidden">
+            {/* Parallax Background Image */}
+            <motion.div
+                className="absolute inset-0 w-full h-full bg-cover bg-center"
+                style={{
+                    backgroundImage: "url('/aboutt.jpg')",
+                    scale,
+                    y,
+                }}
+            />
+            <span className="absolute inset-0 w-full h-full bg-black/70" />
 
-export default About
+            {/* Content */}
+            <motion.div
+                className="relative z-10 w-full max-w-[90rem] text-white px-6 flex flex-col items-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+            >
+                <div className="w-full h-full flex flex-col md:flex-row justify-between">
+                    <div className="w-full md:w-1/2 flex flex-col gap-4">
+                        <h3 className="text-xl font-semibold">About Us</h3>
+                        <p className="mt-6 text-lg">
+                            Quranique is an elite online Qur’an teaching platform offering live, one-to-one lessons for students of all levels – from complete beginners to advanced learners seeking Ijazah. Our mission is to empower non-Arabic speaking Muslims in Western countries to access authentic, world-class Qur’an education.
+                        </p>
+                    </div>
+                    <div className="w-full md:w-1/2 flex mt-auto flex-col gap-4">
+                        
+                        <p className="mt-6">
+                        We combine Egypt’s unrivalled Qur’anic heritage with structured learning, flexible scheduling, and expert teachers fluent in English. Every student receives personalised attention, tailored lessons, and a clear path to Qur’anic excellence.
+                        </p>
+                        <p className="mt-6">
+                        Whether you are starting with the alphabet or preparing for Ijazah, Quranique will guide you – step by step – with care, precision, and passion.
+                        </p>
+                    </div>
+                </div>
+            </motion.div>
+        </div>
+    );
+};
+
+export default About;

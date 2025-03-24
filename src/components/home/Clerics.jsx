@@ -1,56 +1,63 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { getAllClerics } from '../../services';
 import { scroller } from 'react-scroll';
 import { useNavigate } from 'react-router-dom';
+
 const Clerics = () => {
+    const [clerics, setClerics] = useState([]);
+    const scrollerRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        getAllClerics().then(data => setClerics(data.clerics))
-    }, [])
-
-    const [clerics, setClerics] = useState([])
-
-    const scrollerRef = useRef(null);
-
-    const navigate = useNavigate()
-
+        getAllClerics().then(data => setClerics(data.clerics));
+    }, []);
 
     return (
-        <div className='w-full flex justify-center'>
-            <div className="w-full max-w-[90rem] flex flex-col gap-[3rem] items-center">
-                <span className="flex items-center gap-4">
-                    <span className="bg-primary/50 rounded-full p-1 md:p-2"></span>
-                    <h3 className="text-2xl md:text-5xl tracking-[0.5rem] md:tracking-[1rem] font-semibold">OUR TEACHERS</h3>
-                    <span className="bg-primary/50 rounded-full p-1 md:p-2"></span>
-                </span>
-                <div ref={scrollerRef} style={{ willChange: 'transform' }} className="w-full scroller">
+        <div className='w-full flex justify-center bg-gray-900 py-16'>
+            <div className="w-full max-w-[90rem] flex flex-col gap-12 items-center">
+                {/* Section Title */}
+                <div className="flex items-center gap-4 text-white">
+                    <span className="bg-primary/50 rounded-full p-2"></span>
+                    <h3 className="text-3xl md:text-5xl tracking-wide font-semibold">OUR TEACHERS</h3>
+                    <span className="bg-primary/50 rounded-full p-2"></span>
+                </div>
+                
+                {/* Scrolling Clerics Section */}
+                <div ref={scrollerRef} className="w-full overflow-hidden relative">
                     <motion.div
                         animate={{ x: ["0%", "-80%"] }}
-                        transition={{
-                            repeat: Infinity,
-                            duration: 200,
-                            ease: "linear",
-                        }}
-                        className='min-w-max flex gap-8 p-4'>
-                        {[...clerics, ...clerics, ...clerics, ...clerics, ...clerics, ...clerics].map((cleric, index) => (
-                            <span onClick={() => {
-                                navigate(`/cleric/${cleric?.id}`)
-                                setTimeout(() => {
-                                    scroller.scrollTo('cleric', { smooth: true })
-                                }, 100);
-                            }} key={index} className='w-[20rem] cursor-pointer flex-grow max-w-[22%] h-[20rem] overflow-hidden relative'>
-                                <img src={cleric.image} className='relative w-full h-full top-0 left-0' alt="" />
-                                <span className="w-full h-full absolute top-0 left-0 z-[2] flex flex-col justify-end items-center p-4 object-cover bg-gradient-to-t from-primary to-transparent">
-                                    <p className="text-xl text-secondary">{cleric.name}</p>
-                                </span>
-                            </span>
+                        transition={{ repeat: Infinity, duration: 50, ease: "linear" }}
+                        className='flex gap-6 p-4 min-w-max'
+                    >
+                        {[...clerics, ...clerics].map((cleric, index) => (
+                            <motion.div
+                                key={index}
+                                className='w-[24rem] h-96 cursor-pointer flex-shrink-0 overflow-hidden relative rounded-lg shadow-lg'
+                                whileHover={{ scale: 1.05 }}
+                                onClick={() => {
+                                    navigate(`/cleric/${cleric?.id}`);
+                                    setTimeout(() => {
+                                        scroller.scrollTo('cleric', { smooth: true });
+                                    }, 100);
+                                }}
+                            >
+                                <img 
+                                    src={cleric.image} 
+                                    alt={cleric.name} 
+                                    className='w-full h-full object-cover transition-transform duration-500 hover:scale-110' 
+                                />
+                                <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-4 text-center text-white transition-all duration-500 hover:bg-black/40">
+                                    <p className="text-2xl font-bold mb-2">{cleric.name}</p>
+                                    <p className='text-lg font-medium'>{cleric?.subTitle}</p>
+                                </div>
+                            </motion.div>
                         ))}
                     </motion.div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Clerics
+export default Clerics;

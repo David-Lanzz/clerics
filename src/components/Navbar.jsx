@@ -63,7 +63,7 @@ const Navbar = () => {
                     <h3 className={`text-2xl slowMo ${scrollPosition > 450
                         ? "text-primary" : pathname.includes('authenticate') || pathname.includes('booking') ? "text-primary"
                             : "text-secondary"
-                        }`}>BOOK A MUSLIM TEACHER</h3>
+                        }`}>Quranique</h3>
 
                     {/* Desktop Nav Links */}
                     <span className="hidden md:flex gap-8 items-center">

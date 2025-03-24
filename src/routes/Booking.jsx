@@ -175,7 +175,7 @@ const Booking = () => {
                     </div>
 
                     <div>
-                        <label className="block text-gray-700 font-medium">We'd love a brief description of the cleric you want</label>
+                        <label className="block text-gray-700 font-medium">We'd love a brief description of yourself and what you want from us</label>
                         <textarea onChange={(e) => handleFormData('message', e.target.value)} className="w-full p-3 border border-secondary rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary h-[15rem] resize-none" placeholder="Enter a brief description of what you want."></textarea>
                     </div>
                     {/* Submit Button */}
