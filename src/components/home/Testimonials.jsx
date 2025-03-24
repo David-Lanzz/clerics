@@ -31,8 +31,11 @@ const Testimonials = () => {
 
     return (
         <div className="w-full flex justify-center px-4 md:px-16">
-            <div className="w-full flex flex-col max-w-[90rem] gap-12 items-center">
-                <h2 className="text-2xl md:text-5xl text-center font-semibold">RECOMMENDATIONS</h2>
+            <div className="w-full flex flex-col max-w-[90rem] gap-12 py-[4rem]">
+                <span className="flex flex-col gap-2">
+                    <p>Testimonials</p>
+                <h2 className="text-2xl md:text-5xl font-semibold">WHAT OUR CLIENTS THINK</h2>
+                </span>
 
                 <div className="relative w-full flex items-center justify-center overflow-hidden">
                     {/* Left Chevron */}
@@ -56,7 +59,7 @@ const Testimonials = () => {
                                     key={idx}
                                     className="w-[20rem] md:max-w-[30%] flex-grow flex flex-col gap-4 border border-primary p-6 px-8 bg-secondary shadow-lg"
                                 >
-                                    <p>{testimonial.text}</p>
+                                    <p>"{testimonial.text}"</p>
                                     <h5 className="text-xl font-semibold">{testimonial.name}</h5>
                                 </div>
                             ))}
