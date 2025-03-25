@@ -79,7 +79,7 @@ const Testimonials = () => {
                             {testimonials.map((testimonial, idx) => (
                                 <div
                                     key={idx}
-                                    className="w-[20rem] md:max-w-[30%] flex-grow flex flex-col gap-4 border border-primary p-6 px-8 bg-secondary shadow-lg"
+                                    className="w-[20rem] hover:bg-primary hover:text-secondary slowMo md:max-w-[30%] flex-grow flex flex-col gap-4 border border-primary p-6 px-8 bg-secondary shadow-lg"
                                 >
                                     <p>"{testimonial.text}"</p>
                                     <h5 className="text-xl font-semibold">{testimonial.name}</h5>
