@@ -1,140 +1,97 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Touch from "./home/Touch";
 import Footer from "./Footer";
 import { scroller } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { FaChevronRight, FaUserSecret } from "react-icons/fa6";
+import { FaBars, FaTimes, FaChevronRight } from "react-icons/fa";
 import { getAllClerics } from "../services";
 
 const Navbar = () => {
-
-    const [clerics, setClerics] = useState([])
-    const userId = localStorage.getItem('userId')
-
-    useEffect(() => {
-        getAllClerics().then(data => setClerics(data?.clerics))
-    }, [])
-
-    const [tabs, setTabs] = useState([
-        { title: "Home", link: "home" },
-        { title: "About", link: "about" },
-        { title: "Our Clerics", link: "clerics", list: clerics, hovered: false },
-        { title: "My Bookings", link: `mybookings/${userId}` }
-    ])
-
-    const [scrollPosition, togglePosition] = useState(0);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+    const navigate = useNavigate();
     const location = useLocation();
     const { pathname } = location;
 
-    useEffect(() => {
-            const scrollListener = () => {
-                togglePosition(window.scrollY);
-            };
-            window.addEventListener("scroll", scrollListener);
-            return () => {
-                window.removeEventListener("scroll", scrollListener);
-            };
-    }, [scrollPosition, pathname]);
+    const [clerics, setClerics] = useState([]);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const userId = useMemo(() => localStorage.getItem('userId'), []);
 
-    const navigate = useNavigate();
+    useEffect(() => {
+        getAllClerics().then(data => setClerics(data?.clerics || []));
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => setScrollPosition(window.scrollY);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const handleNavigate = (link) => {
         setIsMobileMenuOpen(false);
-        if (link === "home") {
-            navigate("/");
-        } else {
-            navigate(`/${link}`);
-        }
+        navigate(link === "home" ? "/" : `/${link}`);
         setTimeout(() => {
             scroller.scrollTo(link, { smooth: "easeInOutQuart" });
         }, 100);
     };
 
-    
+    const tabs = useMemo(() => [
+        { title: "Home", link: "home" },
+        { title: "About", link: "about" },
+        { title: "Our Clerics", link: "clerics", list: clerics },
+        { title: "My Bookings", link: `mybookings/${userId}` }
+    ], [clerics, userId]);
+
+    const isScrolled = scrollPosition > 550;
+    const isAuthOrBookingPage = pathname.includes('authenticate') || pathname.includes('booking');
+    const navTextColor = isScrolled || isAuthOrBookingPage ? "text-primary" : "text-secondary";
+    const navBgColor = isScrolled ? "bg-secondary/80" : "bg-transparent";
+
     return (
         <div className="w-full flex flex-col relative">
             {/* Navbar */}
-            <div className="w-full flex justify-center fixed top-0 left-0 backdrop-blur-sm z-[1000] px-4 md:px-[4rem]">
+            <div className={`w-full fixed top-0 left-0 z-[1000] backdrop-blur-sm px-4 md:px-[4rem] slowMo ${navBgColor} flex justify-center`}>
                 <div className="w-full max-w-[90rem] flex justify-between py-4 items-center">
-                    <h3 className={`text-2xl slowMo ${scrollPosition > 450
-                        ? "text-primary" : pathname.includes('authenticate') || pathname.includes('booking') ? "text-primary"
-                            : "text-secondary"
-                        }`}>Quranique</h3>
+                    <h3 className={`text-2xl font-bold slowMo ${navTextColor}`}>Quranique</h3>
 
-                    {/* Desktop Nav Links */}
-                    <span className="hidden md:flex gap-8 items-center">
+                    {/* Desktop Navigation */}
+                    <nav className="hidden md:flex gap-8 items-center">
                         {tabs.map((tab, index) => (
-                            <span className="flex flex-col relative" key={index}
-                                onMouseEnter={() => setTabs(prev => prev.map(item =>
-                                    tab?.link === 'clerics' ? { ...item, hovered: true } : item
-                                ))}
-
-                                onMouseLeave={() => setTabs(prev => prev.map(tab =>
-                                    tab?.link === 'clerics' ? { ...tab, hovered: false } : tab
-                                ))}
-
-                            >
+                            <div key={index} className="relative group">
                                 <span
                                     onClick={() => handleNavigate(tab.link)}
-                                    className={`cursor-pointer font-medium slowMo ${scrollPosition > 450
-                                        ? "text-primary" : pathname.includes('authenticate') || pathname.includes('booking') ? "text-primary"
-                                            : "text-secondary"
-                                        }`}
+                                    className={`cursor-pointer font-medium slowMo ${navTextColor}`}
                                 >
                                     {tab.title}
                                 </span>
-                                {
-                                    tab?.list ? <div className={`flex flex-col z-[10] gap-4 bg-secondary p-2 pt-[2rem] border-b border-r w-max absolute ${!tab?.hovered ? 'top-[-100vh]' : 'top-[2rem]'} slowMo border-primary rounded-md`}>
-                                        {
-                                            clerics?.map((item, index) => (
-                                                <span onClick={() => {
-                                                    navigate(`/cleric/${item?.id}`)
-                                                    setTimeout(() => {
-                                                        scroller.scrollTo('cleric', { smooth: true, offset: -100 })
-                                                        setTabs(prev => prev.map(tab =>
-                                                            tab?.link === 'clerics' ? { ...tab, hovered: false } : tab
-                                                        ))
-                                                    }, 100);
-                                                }} className="underline px-2 justify-between gap-4 items-center py-1 flex cursor-pointer" key={index}>
-                                                    {item?.name}
-                                                    <FaChevronRight />
-                                                </span>
-                                            ))
-                                        }
-                                    </div> : null
-                                }
-                            </span>
+
+                                {/* Dropdown for Clerics */}
+                                {tab.list?.length > 0 && (
+                                    <div className="absolute top-[2rem] left-0 z-10 bg-secondary border border-primary rounded-md opacity-0 group-hover:opacity-100 transition-opacity p-2 w-max">
+                                        {clerics.map((cleric, i) => (
+                                            <span
+                                                key={i}
+                                                onClick={() => navigate(`/cleric/${cleric.id}`)}
+                                                className="flex justify-between gap-4 items-center py-1 px-2 cursor-pointer hover:underline"
+                                            >
+                                                {cleric.name} <FaChevronRight />
+                                            </span>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         ))}
                         <button
-                            className={`slowMo ${scrollPosition > 450
-                                ? "standardBtn" : pathname.includes('authenticate') || pathname.includes('booking') ? "standardBtn"
-                                    : "standardBtnLight"
-                                }`}
-
-                            onClick={() => {
-                                navigate(`/booking/${userId}/`)
-                                setTimeout(() => {
-                                    scroller.scrollTo('booking', { smooth: true, offset: -100 })
-                                }, 100);
-                            }}
-
-                            onDoubleClick={() => {
-                                navigate('/authorizeAdmin')
-                            }}
+                            className={`slowMo ${isScrolled || isAuthOrBookingPage ? "standardBtn" : "standardBtnLight"}`}
+                            onClick={() => handleNavigate(`booking/${userId}`)}
+                            onDoubleClick={() => navigate('/authorizeAdmin')}
                         >
                             Book Now
                         </button>
-                    </span>
+                    </nav>
 
                     {/* Mobile Menu Button */}
-                    <span className={`md:hidden slowMo ${scrollPosition > 450
-                        ? "text-primary" : pathname.includes('authenticate') || pathname.includes('booking') ? "text-primary"
-                            : "text-secondary"
-                        } text-2xl cursor-pointer`} onClick={() => setIsMobileMenuOpen(true)}>
+                    <span className={`md:hidden slowMo ${navTextColor} text-2xl cursor-pointer`} onClick={() => setIsMobileMenuOpen(true)}>
                         <FaBars />
                     </span>
                 </div>
@@ -169,50 +126,35 @@ const Navbar = () => {
                             {/* Mobile Nav Links */}
                             <nav className="mt-10 flex flex-col gap-6">
                                 {tabs.map((tab, index) => (
-                                    <span className="" key={index}>
+                                    <div key={index}>
                                         <span
                                             onClick={() => handleNavigate(tab.link)}
-                                            className={`text-lg font-medium cursor-pointer hover:text-primary transition-colors`}
+                                            className="text-lg font-medium cursor-pointer hover:text-primary transition-colors"
                                         >
                                             {tab.title}
                                         </span>
-                                        {
-                                            tab?.list ? <div className={`flex pl-4 flex-col z-[10] gap-4 p-2 pt-[2rem] border-b border-r h-[20rem] overflow-auto slowMo border-primary rounded-md`}>
-                                                {
-                                                    clerics?.map((item, index) => (
-                                                        <span onClick={() => {
-                                                            navigate(`/cleric/${item?.id}`)
-                                                            setTimeout(() => {
-                                                                scroller.scrollTo('cleric', { smooth: true, offset: -100 })
-                                                                setTabs(prev => prev.map(tab =>
-                                                                    tab?.link === 'clerics' ? { ...tab, hovered: false } : tab
-                                                                ))
-                                                            }, 100);
-                                                        }} className="underline px-2 justify-between gap-4 items-center py-1 flex cursor-pointer" key={index}>
-                                                            {item?.name}
-                                                            <FaChevronRight />
-                                                        </span>
-                                                    ))
-                                                }
-                                            </div> : null
-                                        }
-                                    </span>
+
+                                        {/* Clerics Dropdown in Mobile */}
+                                        {tab.list?.length > 0 && (
+                                            <div className="flex flex-col pl-4 mt-2 border-l border-primary">
+                                                {clerics.map((cleric, i) => (
+                                                    <span
+                                                        key={i}
+                                                        onClick={() => navigate(`/cleric/${cleric.id}`)}
+                                                        className="underline px-2 py-1 flex justify-between gap-4 items-center cursor-pointer"
+                                                    >
+                                                        {cleric.name} <FaChevronRight />
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
                                 ))}
                             </nav>
 
                             {/* Book Now Button */}
                             <button
-                                onClick={() => {
-                                    handleNavigate(`booking/${userId}`);
-                                    setTimeout(() => {
-                                        scroller.scrollTo('booking', { smooth: false, offset: -100 })
-                                    }, 100);
-                                    setIsMobileMenuOpen(false);
-                                }}
-
-                                onDoubleClick={() => {
-                                    navigate('/authorizeAdmin')
-                                }}
+                                onClick={() => handleNavigate(`booking/${userId}`)}
                                 className="mt-6 py-2 px-6 bg-primary text-white rounded-lg text-lg shadow-md hover:bg-opacity-90 transition"
                             >
                                 Book Now

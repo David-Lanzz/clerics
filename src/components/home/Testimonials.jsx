@@ -4,14 +4,36 @@ import { motion } from "framer-motion";
 
 const Testimonials = () => {
     const testimonials = [
-        { name: "Bruce Wayne", text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, illum sapiente aspernatur facilis enim voluptate a cupiditate sequi totam quasi assumenda hic? Modi iure at sequi quam nihil perferendis maxime?" },
-        { name: "Clark Kent", text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, illum sapiente aspernatur facilis enim voluptate a cupiditate sequi totam quasi assumenda hic? Modi iure at sequi quam nihil perferendis maxime?" },
-        { name: "Diana Prince", text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, illum sapiente aspernatur facilis enim voluptate a cupiditate sequi totam quasi assumenda hic? Modi iure at sequi quam nihil perferendis maxime?" },
-        { name: "Barry Allen", text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, illum sapiente aspernatur facilis enim voluptate a cupiditate sequi totam quasi assumenda hic? Modi iure at sequi quam nihil perferendis maxime?" },
-        { name: "Hal Jordan", text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, illum sapiente aspernatur facilis enim voluptate a cupiditate sequi totam quasi assumenda hic? Modi iure at sequi quam nihil perferendis maxime?" },
-        { name: "Arthur Curry", text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, illum sapiente aspernatur facilis enim voluptate a cupiditate sequi totam quasi assumenda hic? Modi iure at sequi quam nihil perferendis maxime?" },
-        { name: "Paul Walker", text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, illum sapiente aspernatur facilis enim voluptate a cupiditate sequi totam quasi assumenda hic? Modi iure at sequi quam nihil perferendis maxime?" },
+        { 
+            name: "Amina S.", 
+            text: "Alhamdulillah, Quranique has transformed my Quran recitation. My teacher’s patience and expertise helped me develop confidence in my Tajweed."
+        },
+        { 
+            name: "Omar R.", 
+            text: "I never imagined I could memorize so much of the Quran. The structured lessons and personal mentorship made my Hifz journey smooth and rewarding." 
+        },
+        { 
+            name: "Hafsa B.", 
+            text: "Earning my Ijazah through Quranique was a dream come true. The sanad is authentic, and the scholars are highly qualified. Highly recommended!" 
+        },
+        { 
+            name: "Yusuf K.", 
+            text: "The one-to-one sessions are incredibly effective. I appreciate the flexibility in scheduling, making it easy to learn even with a busy lifestyle." 
+        },
+        { 
+            name: "Fatima L.", 
+            text: "As a beginner, I was nervous, but Quranique made learning the Arabic alphabet and Tajweed so simple. My teacher was very supportive." 
+        },
+        { 
+            name: "Abdullah M.", 
+            text: "The depth of knowledge and the dedication of the instructors at Quranique is amazing. I feel blessed to be on this journey with them." 
+        },
+        { 
+            name: "Maryam T.", 
+            text: "Learning with Quranique has brought me closer to the Quran like never before. The lessons are engaging, and the guidance is truly invaluable." 
+        },
     ];
+    
 
     const [isDesktop, setIsDesktop] = useState(window.innerWidth > 720);
 

@@ -6,7 +6,7 @@ import { FaChevronRight } from 'react-icons/fa';
 
 const images = [
     '/hero1.jpg', '/hero2.jpg', '/hero3.jpg', '/hero4.jpg', '/hero5.jpg',
-    '/hero6.jpg', '/hero7.jpg', '/hero8.jpg', '/hero9.jpg', '/hero10.jpg'
+    '/hero6.jpg', '/hero7.jpg', '/hero8.jpg', '/hero9.jpg', '/hero10.jpg', '/hero11.jpg'
 ];
 
 const Hero = () => {
@@ -20,7 +20,7 @@ const Hero = () => {
             setTimeout(() => {
                 setCurrentImage((prev) => (prev + 1) % images.length);
             }, 1000); // Wait for fade transition before switching image
-        }, 5000); // Each image lasts 5 seconds
+        }, 10000); // Each image lasts 5 seconds
         return () => clearInterval(interval);
     }, []);
 
@@ -42,7 +42,7 @@ const Hero = () => {
             
             {/* Content */}
             <motion.div 
-                className='p-8 bg-black/80 w-max mt-[5rem] pb-4 md:pb-[4rem] relative z-[5] text-secondary flex flex-col items-center text-center'
+                className='p-8 bg-black/80 w-max max-w-[40rem] mt-[5rem] pb-4 md:pb-[4rem] relative z-[5] text-secondary flex flex-col items-center text-center'
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
