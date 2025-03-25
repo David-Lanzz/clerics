@@ -52,7 +52,7 @@ const Navbar = () => {
             {/* Navbar */}
             <div className={`w-full fixed top-0 left-0 z-[1000] backdrop-blur-sm px-4 md:px-[4rem] slowMo ${navBgColor} flex justify-center`}>
                 <div className="w-full max-w-[90rem] flex justify-between py-4 items-center">
-                    <h3 className={`text-2xl font-bold slowMo ${navTextColor}`}>Quranique</h3>
+                    <img src="/logo.png" className="h-12" alt="" />
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex gap-8 items-center">
