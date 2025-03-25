@@ -38,17 +38,23 @@ const About = () => {
                 <div className="w-full h-full flex flex-col md:flex-row justify-between">
                     <div className="w-full md:w-1/2 flex flex-col gap-4">
                         <h3 className="text-xl font-semibold">About Us</h3>
-                        <p className="mt-6 text-lg">
+                        <motion.p
+                            initial={{ x: -50, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="mt-6 text-lg"
+                        >
                             Quranique is an elite online Qur’an teaching platform offering live, one-to-one lessons for students of all levels – from complete beginners to advanced learners seeking Ijazah. Our mission is to empower non-Arabic speaking Muslims in Western countries to access authentic, world-class Qur’an education.
-                        </p>
+                        </motion.p>
+
                     </div>
                     <div className="w-full md:w-1/2 flex mt-auto flex-col gap-4">
-                        
+
                         <p className="mt-6">
-                        We combine Egypt’s unrivalled Qur’anic heritage with structured learning, flexible scheduling, and expert teachers fluent in English. Every student receives personalised attention, tailored lessons, and a clear path to Qur’anic excellence.
+                            We combine Egypt’s unrivalled Qur’anic heritage with structured learning, flexible scheduling, and expert teachers fluent in English. Every student receives personalised attention, tailored lessons, and a clear path to Qur’anic excellence.
                         </p>
                         <p className="mt-6">
-                        Whether you are starting with the alphabet or preparing for Ijazah, Quranique will guide you – step by step – with care, precision, and passion.
+                            Whether you are starting with the alphabet or preparing for Ijazah, Quranique will guide you – step by step – with care, precision, and passion.
                         </p>
                     </div>
                 </div>
