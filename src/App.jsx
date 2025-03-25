@@ -22,6 +22,7 @@ import CodeVerification from "./routes/CodeVerification"
 import Login from "./routes/Login"
 import ClericNav from "./routes/ClericNav"
 import ClericBookings from "./routes/ClericBookings"
+import SmoothScroll from "./SmoothScroll"
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
 
   return (
     <div className="text-primary bg-secondary">
+      <SmoothScroll />
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Navbar />}>
