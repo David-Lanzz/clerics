@@ -33,9 +33,9 @@ const Hero = () => {
                     src={images[currentImage]}
                     alt=''
                     className='absolute w-full h-full object-cover'
-                    initial={{ scale: zoomIn ? 1.1 : 1, opacity: 0 }}
+                    initial={{ scale: zoomIn ? 1.1 : 1, opacity: 0.5 }}
                     animate={{ scale: zoomIn ? 1 : 1.1, opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    exit={{ opacity: 0.5 }}
                     transition={{ duration: 5, ease: 'easeInOut' }}
                 />
             </AnimatePresence>
