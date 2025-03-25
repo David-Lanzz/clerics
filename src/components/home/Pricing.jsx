@@ -30,10 +30,10 @@ const Pricing = () => {
                     >
                         <thead>
                             <tr className="bg-primary text-white">
-                                <th className="p-4">Package</th>
-                                <th className="p-4">Lesson Length</th>
-                                <th className="p-4">Sessions/Week</th>
-                                <th className="p-4">Monthly Fee</th>
+                                <th className="p-4 w-max">Package</th>
+                                <th className="p-4 w-max">Lesson Length</th>
+                                <th className="p-4 w-max">Sessions/Week</th>
+                                <th className="p-4 w-max">Monthly Fee</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,10 +54,10 @@ const Pricing = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8, delay: index * 0.2 }}
                                 >
-                                    <td className="p-4 font-semibold">{plan.package}</td>
-                                    <td className="p-4">{plan.lessonLength}</td>
-                                    <td className="p-4">{plan.sessions}</td>
-                                    <td className="p-4">{plan.price}</td>
+                                    <td className="p-4 w-max font-semibold">{plan.package}</td>
+                                    <td className="p-4 w-max">{plan.lessonLength}</td>
+                                    <td className="p-4 w-max">{plan.sessions}</td>
+                                    <td className="p-4 w-max">{plan.price}</td>
                                 </motion.tr>
                             ))}
                         </tbody>
