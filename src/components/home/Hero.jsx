@@ -64,7 +64,7 @@ const Hero = () => {
                     animate={{ opacity: 1 }} 
                     transition={{ duration: 1.5, delay: 0.5 }}
                 >
-                    Learn from the world’s finest reciters and elevate your Qur’anic mastery.
+                   Online Quran Learning Platform – From the Heart of Egypt to Your Home.
                 </motion.p>
                 
                 <motion.p 
@@ -73,7 +73,7 @@ const Hero = () => {
                     animate={{ opacity: 1 }} 
                     transition={{ duration: 1.5, delay: 0.8 }}
                 >
-                    Unlock the secrets of expert recitation with personalized one-on-one guidance from Egypt’s top scholars. Embark on a journey of clarity, confidence, and spiritual growth.
+                   Master the Quran with the World's Best — One Teacher, One Student, One Journey.
                 </motion.p>
                 
                 {/* Buttons */}
