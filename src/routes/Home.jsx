@@ -9,6 +9,7 @@ import Programmes from '../components/home/Programmes'
 import IjazahProgramme from '../components/home/Ijazah'
 import Pricing from '../components/home/Pricing'
 import FAQs from '../components/home/Faq'
+import WhyQuranique from '../components/home/WHY'
 
 const Home = () => {
   
@@ -17,8 +18,9 @@ const Home = () => {
         <Hero />
         <About />
         <Video />
-        <Clerics />
+        {/* <Clerics /> */}
         <Testimonials />
+        <WhyQuranique />
         <Programmes />
         <IjazahProgramme />
         <Pricing />

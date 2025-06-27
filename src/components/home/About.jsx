@@ -48,7 +48,7 @@ const About = () => {
                             ref={ref1}
                             className={`mt-6 text-lg relative transition-all duration-1000 ease-in-out ${inView1 ? 'opacity-100 left-0' : 'opacity-0 left-[-5rem]'}`}
                         >
-                            Quranique is an elite online Qur’an teaching platform offering live, one-to-one lessons for students of all levels – from complete beginners to advanced learners seeking Ijazah. Our mission is to empower non-Arabic speaking Muslims in Western countries to access authentic, world-class Qur’an education.
+                            Quranique is a global online platform offering personalised one-to-one Quran learning from Egypt’s most esteemed and qualified reciters and scholars. Whether you’re a complete beginner, returning after years, or an advanced student seeking Ijazah or mastery of Maqamat, Quranique is built around your goals, your pace, and your life.
                         </motion.p>
                     </div>
                     
@@ -58,13 +58,13 @@ const About = () => {
                             ref={ref2}
                             className={`mt-6 relative transition-all duration-1000 ease-in-out ${inView2 ? 'opacity-100 right-0' : 'opacity-0 right-[-5rem]'}`}
                         >
-                            We combine Egypt’s unrivalled Qur’anic heritage with structured learning, flexible scheduling, and expert teachers fluent in English. Every student receives personalised attention, tailored lessons, and a clear path to Qur’anic excellence.
+                            We pair you with elite Egyptian teachers trained in Al-Azhar tradition, fluent in English, and deeply experienced in guiding non-Arabic speakers of all ages. From Tajweed and Recitation to Hifz, Maqams, Tafseer, and Ijazah preparation – every lesson is live, tailored, and rooted in centuries of scholarly excellence.
                         </motion.p>
                         <motion.p
                             ref={ref3}
                             className={`mt-6 relative transition-all duration-1000 ease-in-out ${inView3 ? 'opacity-100 right-0' : 'opacity-0 right-[-5rem]'}`}
                         >
-                            Whether you are starting with the alphabet or preparing for Ijazah, Quranique will guide you – step by step – with care, precision, and passion.
+                           You’ll experience the rich Quranic culture of Egypt — where recitation is part of every street, home, and heart — from wherever you are in the world.
                         </motion.p>
                     </div>
                 </div>
