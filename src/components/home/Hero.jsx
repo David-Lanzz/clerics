@@ -16,82 +16,85 @@ const Hero = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setZoomIn((prev) => !prev); // Toggle zoom direction
+            setZoomIn((prev) => !prev);
             setTimeout(() => {
                 setCurrentImage((prev) => (prev + 1) % images.length);
-            }, 1000); // Wait for fade transition before switching image
-        }, 10000); // Each image lasts 5 seconds
+            }, 1000);
+        }, 10000);
         return () => clearInterval(interval);
     }, []);
 
     return (
-        <div className='relative w-full h-[90vh] md:h-[120svh] max-h-[58rem] flex justify-center items-center px-4 md:px-[4rem] overflow-hidden'>
-            {/* Background Image Animation */}
+        <div className="relative w-full h-[100vh] max-h-[58rem] overflow-hidden flex items-center justify-center">
+            {/* Background */}
             <AnimatePresence>
                 <motion.img
                     key={currentImage}
                     src={images[currentImage]}
-                    alt=''
-                    className='absolute w-full h-full object-cover'
+                    alt=""
+                    className="absolute w-full h-full object-cover"
                     initial={{ scale: zoomIn ? 1.1 : 1, opacity: 0.5 }}
                     animate={{ scale: zoomIn ? 1 : 1.1, opacity: 1 }}
                     exit={{ opacity: 0.5 }}
                     transition={{ duration: 5, ease: 'easeInOut' }}
                 />
             </AnimatePresence>
-            
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#000000bb] to-transparent z-10 backdrop-blur-sm" />
+
             {/* Content */}
-            <motion.div 
-                className='p-8 bg-black/80 w-max max-w-[40rem] mt-[5rem] pb-4 md:pb-[4rem] relative z-[5] text-secondary flex flex-col items-center text-center'
+            <motion.div
+                className="relative z-20 text-center text-white px-6 md:px-12 py-12 flex flex-col items-center"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
             >
-                <h3 className='text-lg md:text-2xl tracking-wide'>WELCOME TO</h3>
-                <motion.h1 
-                    className='text-5xl md:text-7xl font-semibold' 
-                    initial={{ opacity: 0, scale: 0.9 }} 
+                <h3 className="text-base md:text-lg tracking-widest uppercase text-goldCardBg font-medium mb-2">
+                    Welcome to
+                </h3>
+
+                <motion.h1
+                    className="text-5xl md:text-7xl font-bold leading-tight drop-shadow-md"
+                    initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2 }}
                 >
                     Quranique
                 </motion.h1>
 
-                {/* Refined Text Section */}
-                <motion.p 
-                    className='text-xl mt-6 max-w-3xl italic' 
-                    initial={{ opacity: 0 }} 
-                    animate={{ opacity: 1 }} 
+                <motion.p
+                    className="text-xl md:text-2xl mt-6 italic max-w-3xl text-goldCardBg"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ duration: 1.5, delay: 0.5 }}
                 >
-                   Online Quran Learning Platform – From the Heart of Egypt to Your Home.
+                    Online Quran Learning Platform – From the Heart of Egypt to Your Home.
                 </motion.p>
-                
-                <motion.p 
-                    className='text-lg mt-4 max-w-4xl leading-relaxed opacity-80' 
-                    initial={{ opacity: 0 }} 
-                    animate={{ opacity: 1 }} 
+
+                <motion.p
+                    className="text-lg md:text-xl mt-4 max-w-3xl text-white/90"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ duration: 1.5, delay: 0.8 }}
                 >
-                   Master the Quran with the World's Best — One Teacher, One Student, One Journey.
+                    Master the Quran with the World's Best — One Teacher, One Student, One Journey.
                 </motion.p>
-                
-                {/* Buttons */}
-                <motion.div 
-                    className='flex flex-col md:flex-row gap-4 mt-6' 
-                    initial={{ opacity: 0, y: 20 }} 
+
+                <motion.div
+                    className="mt-8 flex gap-4 flex-col sm:flex-row"
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, delay: 1 }}
                 >
-                    <button 
+                    <button
                         onClick={() => {
                             navigate('/about');
                             scroller.scrollTo('about', { smooth: true });
-                        }} 
-                        className='standardBtn flex gap-2 items-center'
+                        }}
+                        className="bg-goldCardBg text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-300 transition-all flex items-center gap-2"
                     >
-                        Learn more
-                        <FaChevronRight />
+                        Learn More <FaChevronRight />
                     </button>
                 </motion.div>
             </motion.div>

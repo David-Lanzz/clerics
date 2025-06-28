@@ -38,7 +38,7 @@ const Team = () => {
                             key={index}
                             className="w-[20rem] md:max-w-[30%] flex-grow flex flex-col gap-4 bg-tertiary p-4 md:p-6 md:px-8 shadow-lg"
                         >
-                            <span className="bg-gray-200 h-[15rem] w-full overflow-hidden">
+                            <span className="bg-[#62ff6a] h-[15rem] w-full overflow-hidden">
                                 <img src="" alt="" className="w-full h-full object-cover" />
                             </span>
                             <span className="flex flex-col gap-2">

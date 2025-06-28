@@ -50,7 +50,7 @@ const CodeVerification = ({ }) => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-secondary p-6">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-goldCardBg p-6">
             <div className="bg-white p-8 rounded-2xl shadow-lg max-w-md text-center">
                 <h2 className="text-3xl font-semibold text-primary">Enter Verification Code</h2>
                 <p className="text-gray-600 mt-2">We sent a code to your email. Please enter it below.</p>

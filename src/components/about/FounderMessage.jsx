@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const FoundersMessage = () => {
   return (
-    <section className="w-full bg-secondary text-primary py-16 px-6 md:px-16 flex justify-center">
+    <section className="w-full bg-goldCardBg text-primary py-16 px-6 md:px-16 flex justify-center">
       <motion.div 
         initial={{ opacity: 0, y: 50 }} 
         animate={{ opacity: 1, y: 0 }} 

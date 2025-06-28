@@ -14,7 +14,7 @@ const Clerics = () => {
     }, []);
 
     return (
-        <div className='w-full flex justify-center bg-gray-900 py-16'>
+        <div className='w-full flex justify-center bg-greenBg py-16'>
             <div className="w-full max-w-[90rem] flex flex-col gap-12 items-center">
                 {/* Section Title */}
                 <div className="flex items-center gap-4 text-white">

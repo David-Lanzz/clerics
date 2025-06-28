@@ -26,11 +26,11 @@ h5,
 }
 
 .standardBtn {
-    @apply p-3 px-6 bg-primary text-secondary border border-transparent
+    @apply p-3 px-6 bg-primary text-textcolor border border-transparent
 }
 
 .standardBtnLight {
-    @apply p-3 px-6 bg-secondary text-primary border border-transparent
+    @apply p-3 px-6 bg-goldCardBg text-primary border border-transparent
 }
 
 .slowMo {

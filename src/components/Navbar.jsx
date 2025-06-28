@@ -44,8 +44,8 @@ const Navbar = () => {
 
     const isScrolled = scrollPosition > 550;
     const isAuthOrBookingPage = pathname.includes('authenticate') || pathname.includes('booking');
-    const navTextColor = isScrolled || isAuthOrBookingPage ? "text-primary" : "text-secondary";
-    const navBgColor = isScrolled ? "bg-secondary/80" : "bg-transparent";
+    const navTextColor = isScrolled || isAuthOrBookingPage ? "text-textcolor" : "text-textcolor";
+    const navBgColor = isScrolled ? "bg-primary/30" : "bg-transparent";
 
     return (
         <div className="w-full flex flex-col relative">
@@ -67,7 +67,7 @@ const Navbar = () => {
 
                                 {/* Dropdown for Clerics */}
                                 {tab.list?.length > 0 && (
-                                    <div className="absolute top-[2rem] left-0 z-10 bg-secondary border border-primary rounded-md opacity-0 group-hover:opacity-100 transition-opacity p-2 w-max">
+                                    <div className="absolute top-[2rem] left-0 z-10 bg-goldCardBg border border-primary rounded-md opacity-0 group-hover:opacity-100 transition-opacity p-2 w-max">
                                         {clerics.map((cleric, i) => (
                                             <span
                                                 key={i}
@@ -112,7 +112,7 @@ const Navbar = () => {
 
                         {/* Slide-in Menu */}
                         <motion.div
-                            className="fixed top-0 right-0 w-3/4 sm:w-1/2 h-full bg-secondary shadow-lg z-[1000] flex flex-col p-6"
+                            className="fixed top-0 right-0 w-3/4 sm:w-1/2 h-full bg-goldCardBg shadow-lg z-[1000] flex flex-col p-6"
                             initial={{ x: "100%" }}
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}

@@ -23,7 +23,7 @@ const AdminClerics = () => {
                     >
                         <img src={cleric.image} className='relative w-full h-full top-0 left-0' alt="" />
                         <span className="w-full h-full absolute top-0 left-0 z-[2] flex flex-col justify-end items-center p-4 object-cover bg-gradient-to-t from-primary to-transparent">
-                            <p className="text-xl text-secondary">{cleric.name} Name</p>
+                            <p className="text-xl text-textcolor">{cleric.name} Name</p>
                         </span>
                         <span className={`absolute top-0 left-0 w-full h-full object-cover bg-transparent text-transparent hover:text-white hover:bg-black/70 slowMo z-[10] flex justify-center items-center`}>
                         <p className='font-medium'>Click to Edit</p>

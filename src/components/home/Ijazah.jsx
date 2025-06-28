@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 const IjazahProgramme = () => {
   return (
-    <div className="w-full flex justify-center bg-secondary py-16 px-6 text-primary">
+    <div className="w-full flex justify-center bg-goldCardBg py-16 px-6 text-primary">
       <div className="max-w-5xl w-full flex flex-col items-center text-center gap-8">
         {/* Heading */}
         <motion.h2
@@ -36,7 +36,7 @@ const IjazahProgramme = () => {
 
         {/* Ijazah Journey Steps */}
         <motion.div
-          className="w-full max-w-3xl bg-secondary/80 p-6 rounded-lg shadow-lg text-left"
+          className="w-full max-w-3xl bg-goldCardBg/80 p-6 rounded-lg shadow-lg text-left"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -58,7 +58,7 @@ const IjazahProgramme = () => {
         >
           <p className="text-primary">📧 info@quranique.com | 📱 +20 123 456 7890</p>
           <motion.button
-            className="px-6 py-3 text-lg font-semibold bg-secondary hover:bg-secondary/80 rounded-full"
+            className="px-6 py-3 text-lg font-semibold bg-goldCardBg hover:bg-goldCardBg/80 rounded-full"
             whileHover={{ scale: 1.05 }}
           >
             Start Free Trial →
@@ -75,7 +75,7 @@ const IjazahDetail = ({ detail, index }) => {
   return (
     <motion.div
       ref={ref}
-      className="bg-secondary/80 p-6 rounded-lg shadow-lg"
+      className="bg-goldCardBg/80 p-6 rounded-lg shadow-lg"
       initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.2 }}
