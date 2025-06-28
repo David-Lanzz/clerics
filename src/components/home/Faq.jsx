@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const FAQs = () => {
   return (
-    <div className="w-full flex justify-center bg-secondary py-16 px-6 text-primary">
+    <div className="w-full flex justify-center bg-goldCardBg py-16 px-6 text-primary">
       <div className="max-w-4xl w-full flex flex-col items-center text-center gap-8">
         {/* Heading */}
         <motion.h2 

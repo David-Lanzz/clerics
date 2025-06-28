@@ -107,7 +107,7 @@ const AdminBookings = () => {
                                                 <h3 className='relative w-full h-full text-white top-0 left-0 p-4 font-semibold'>{booking?.cleric?.name}</h3>
                                                 <p>{booking?.priceSummary?.reduce((accumulator, obj) => accumulator + obj?.value, 0)}</p>
                                                 <span className="w-full h-full absolute top-0 gap-2 left-0 z-[2] flex flex-col justify-end items-center p-4 object-cover bg-gradient-to-t from-primary to-transparent">
-                                                    <a href={`mailTo:${booking?.email}`} className="p-3 px-6 w-full flex gap-2 items-center bg-secondary"><FaEnvelope /> Send an Email</a>
+                                                    <a href={`mailTo:${booking?.email}`} className="p-3 px-6 w-full flex gap-2 items-center bg-goldCardBg"><FaEnvelope /> Send an Email</a>
                                                     <div className="w-full">
                                                         <button
                                                             onMouseEnter={() => {

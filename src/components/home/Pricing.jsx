@@ -8,7 +8,7 @@ const Pricing = () => {
     const userId = localStorage.getItem('userId')
     const navigate = useNavigate()
     return (
-        <div className="w-full flex justify-center bg-gray-900 py-16 px-6 text-white">
+        <div className="w-full flex justify-center bg-greenBg py-16 px-6 text-white">
             <div className="max-w-5xl w-full flex flex-col items-center text-center gap-8">
                 {/* Heading */}
                 <motion.h2
@@ -49,7 +49,7 @@ const Pricing = () => {
                                             })
                                         }, 100);
                                     }}
-                                    className="border cursor-pointer border-gray-700 hover:bg-gray-800 transition"
+                                    className="border cursor-pointer border-gray-700 hover:bg-greenCardBg transition"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8, delay: index * 0.2 }}

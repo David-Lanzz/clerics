@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 const Programmes = () => {
   return (
-    <div className="w-full flex justify-center bg-gray-900 py-16 px-6 text-white">
+    <div className="w-full flex justify-center bg-greenBg py-16 px-6 text-white">
       <div className="max-w-5xl w-full flex flex-col items-center text-center gap-8">
         {/* Heading */}
         <motion.h2
@@ -43,7 +43,7 @@ const ProgrammeCard = ({ programme, index }) => {
   return (
     <motion.div
       ref={ref}
-      className="bg-gray-800 p-6 rounded-lg shadow-lg text-left"
+      className="bg-greenCardBg p-6 rounded-lg shadow-lg text-left"
       initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.2 }}

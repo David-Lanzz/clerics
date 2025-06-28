@@ -63,7 +63,7 @@ const Testimonials = () => {
                     {/* Left Chevron */}
                     <span
                         onClick={prevSlide}
-                        className="rounded-full absolute left-0 p-3 cursor-pointer border border-primary bg-secondary shadow-md z-10"
+                        className="rounded-full absolute left-0 p-3 cursor-pointer border border-primary bg-goldCardBg shadow-md z-10"
                     >
                         <FaChevronLeft />
                     </span>
@@ -79,7 +79,7 @@ const Testimonials = () => {
                             {testimonials.map((testimonial, idx) => (
                                 <div
                                     key={idx}
-                                    className="w-[20rem] hover:bg-primary hover:text-secondary slowMo md:max-w-[30%] flex-grow flex flex-col gap-4 border border-primary p-6 px-8 bg-secondary shadow-lg"
+                                    className="w-[20rem] hover:bg-primary hover:text-textcolor slowMo md:max-w-[30%] flex-grow flex flex-col gap-4 border border-primary p-6 px-8 bg-goldCardBg shadow-lg"
                                 >
                                     <p>"{testimonial.text}"</p>
                                     <h5 className="text-xl font-semibold">{testimonial.name}</h5>
@@ -91,7 +91,7 @@ const Testimonials = () => {
                     {/* Right Chevron */}
                     <span
                         onClick={nextSlide}
-                        className="rounded-full absolute right-0 p-3 cursor-pointer border border-primary bg-secondary shadow-md z-10"
+                        className="rounded-full absolute right-0 p-3 cursor-pointer border border-primary bg-goldCardBg shadow-md z-10"
                     >
                         <FaChevronRight />
                     </span>

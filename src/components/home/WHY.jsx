@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 const WhyQuranique = () => {
   return (
-    <div className="w-full flex justify-center bg-gray-900 py-20 px-6 text-white">
+    <div className="w-full flex justify-center bg-greenBg py-20 px-6 text-white">
       <div className="max-w-5xl w-full flex flex-col items-center text-center gap-10">
         {/* Heading */}
         <motion.h2
@@ -61,7 +61,7 @@ const BenefitCard = ({ item, index }) => {
   return (
     <motion.div
       ref={ref}
-      className="bg-gray-800 p-6 rounded-xl shadow-md"
+      className="bg-greenCardBg p-6 rounded-xl shadow-md"
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.15 }}

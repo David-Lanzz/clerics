@@ -49,7 +49,7 @@ const Footer = () => {
                         ))}
                     </span>
                     <span className="w-full flex bg-primary/40 items-center justify-end">
-                        <input type="text" onChange={(e) => setEmail(e.target.value)} className="bg-transparent text-start text-secondary flex-grow p-2 md:p-3 pl-3 md:pl-6" />
+                        <input type="text" onChange={(e) => setEmail(e.target.value)} className="bg-transparent text-start text-textcolor flex-grow p-2 md:p-3 pl-3 md:pl-6" />
                         <button className="standardBtn" onClick={() => {
                             navigate(`/booking/${userId}/?email=${email}`)
                             setTimeout(() => {

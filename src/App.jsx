@@ -51,7 +51,7 @@ function App() {
   // })
 
   return (
-    <div className="text-primary bg-secondary">
+    <div className="text-primary bg-goldCardBg">
       <SmoothScroll />
       <ToastContainer />
       <Routes>

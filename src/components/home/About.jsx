@@ -31,7 +31,7 @@ const About = () => {
                     y,
                 }}
             />
-            <span className="absolute inset-0 w-full h-full bg-black/70" />
+            <span className="absolute inset-0 w-full h-full bg-greenCardBg/30" />
 
             {/* Content */}
             <motion.div
