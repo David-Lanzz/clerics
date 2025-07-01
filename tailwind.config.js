@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#046307',         // Deep forest green (unchanged)
-        goldCardBg: '#FFF3B0',      // Soft, elegant pastel gold
+        goldCardBg: '#FFFFFF',      // Soft, elegant pastel gold
         tertiary: '#A5D6A7',        // Light desaturated green, harmonizes with primary
         textcolor: "#FFFFFF",       // Clean white text
         greenBg: "#0B2E0C",         // Slightly darker green background for better contrast
