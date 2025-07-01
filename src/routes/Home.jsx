@@ -10,17 +10,23 @@ import IjazahProgramme from '../components/home/Ijazah'
 import Pricing from '../components/home/Pricing'
 import FAQs from '../components/home/Faq'
 import WhyQuranique from '../components/home/WHY'
+import WhatWeDo from '../components/home/WhatWeDo'
+import What from '../components/What'
+import BookingSteps from '../components/home/Steps'
 
 const Home = () => {
   
   return (
     <Element name='home' className=' flex flex-col overflow-hidden '>
         <Hero />
+        <What />
         <About />
-        <Video />
         {/* <Clerics /> */}
         <Testimonials />
-        <WhyQuranique />
+        <WhatWeDo />
+        <Video />
+        <BookingSteps />
+        {/* <WhyQuranique /> */}
         <Programmes />
         <IjazahProgramme />
         <Pricing />
