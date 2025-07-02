@@ -14,7 +14,7 @@ const About = () => {
     return (
         <div
             ref={ref}
-            className="relative w-full flex justify-center items-center px-4 md:px-[4rem] py-[8rem] h-[80vh] max-h-[50rem] overflow-hidden bg-fixed bg-cover bg-center"
+            className="relative w-full flex justify-center items-center px-4 md:px-[4rem] py-[8rem] md:h-[80vh] md:max-h-[50rem] overflow-hidden bg-fixed bg-cover bg-center"
             style={{
                 backgroundImage: "url('/aboutt.jpg')",
             }}
