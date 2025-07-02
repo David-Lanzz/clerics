@@ -2,7 +2,7 @@ import React from 'react';
 
 const WhatWeDo = () => {
     return (
-        <div className='w-full flex justify-center'>
+        <div className='w-full flex justify-center p-4 md:p-0'>
             <div className="w-full flex flex-col md:flex-row gap-8">
                 <div className="w-full md:w-1/2">
                     <img src="/wwd.jpg" alt="Why Quranique" className=" shadow-lg w-full h-auto object-cover" />

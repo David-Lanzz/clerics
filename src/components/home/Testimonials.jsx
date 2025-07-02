@@ -1,104 +1,102 @@
-import React, { useEffect, useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import React from "react";
 import { motion } from "framer-motion";
+import { FaQuoteLeft } from "react-icons/fa";
+
+const testimonials = [
+  {
+    name: "Sarah K.",
+    location: "London, UK",
+    countryFlag: "🇬🇧",
+    content:
+      "I’ve been Muslim all my life in the UK, but as a busy professional I never got beyond basic Qur’an reading. Quranique has truly been life-changing for me. In just 6 months, my Egyptian teacher helped me correct my Tajweed and I even memorized three new surahs – something I never thought I could do at 35! The one-on-one attention and the way they tied every lesson to real life made it so motivating. I now start each day by reviewing Qur’an, and it gives me peace and focus. My only regret is not starting sooner. Thank you, Quranique, for unlocking this treasure for me.",
+  },
+  {
+    name: "Michael (Mikael) R.",
+    location: "Los Angeles, USA",
+    countryFlag: "🇺🇸",
+    content:
+      "As a recent convert to Islam here in California, I felt overwhelmed trying to learn the Qur’an from scratch. Quranique came to my rescue. They paired me with a kind, patient Ustadh who understood exactly where I was coming from. He not only teaches me how to read Arabic letters and recite, but also shares the beautiful meanings behind verses. I love how modern and organized the platform is – scheduling on the app, lesson reminders, even recordings of my recitation to track progress. Last week I finished reading my very first surah in Arabic! My heart soared.",
+  },
+  {
+    name: "Aliya M.",
+    location: "Sydney, Australia",
+    countryFlag: "🇦🇺",
+    content:
+      "We enrolled our 10-year-old son in Quranique from Sydney, and it’s been fantastic. Finding a good local Quran teacher with authentic recitation was tough, but now he meets online with a certified Egyptian Qari three times a week. I occasionally listen in and I’m amazed at how engaged our son is. Despite the time zone difference, Quranique accommodated our schedule easily. The progress is evident: my child’s pronunciation has improved, and he actually looks forward to classes.",
+  },
+  {
+    name: "Yusuf H.",
+    location: "Toronto, Canada",
+    countryFlag: "🇨🇦",
+    content:
+      "Quranique gave me the confidence to finally pursue my Ijazah. In Canada, I learned to read Qur’an as a youngster but never dreamed I could reach an advanced level. Under the mentorship of Shaikh Abu Bakr and my instructor, I embarked on the Ijazah program. We went page by page, and slowly I felt my skills sharpen. I just completed my final recitation of 30th Juz. Quranique isn’t just a school, it’s a guiding light. If you have a dream to excel in Qur’an, this is where it comes true.",
+  },
+];
 
 const Testimonials = () => {
-    const testimonials = [
-        { 
-            name: "Amina S.", 
-            text: "Alhamdulillah, Quranique has transformed my Quran recitation. My teacher’s patience and expertise helped me develop confidence in my Tajweed."
-        },
-        { 
-            name: "Omar R.", 
-            text: "I never imagined I could memorize so much of the Quran. The structured lessons and personal mentorship made my Hifz journey smooth and rewarding." 
-        },
-        { 
-            name: "Hafsa B.", 
-            text: "Earning my Ijazah through Quranique was a dream come true. The sanad is authentic, and the scholars are highly qualified. Highly recommended!" 
-        },
-        { 
-            name: "Yusuf K.", 
-            text: "The one-to-one sessions are incredibly effective. I appreciate the flexibility in scheduling, making it easy to learn even with a busy lifestyle." 
-        },
-        { 
-            name: "Fatima L.", 
-            text: "As a beginner, I was nervous, but Quranique made learning the Arabic alphabet and Tajweed so simple. My teacher was very supportive." 
-        },
-        { 
-            name: "Abdullah M.", 
-            text: "The depth of knowledge and the dedication of the instructors at Quranique is amazing. I feel blessed to be on this journey with them." 
-        },
-        { 
-            name: "Maryam T.", 
-            text: "Learning with Quranique has brought me closer to the Quran like never before. The lessons are engaging, and the guidance is truly invaluable." 
-        },
-    ];
-    
+  return (
+    <section className="w-full bg-gradient-to-br from-green-50 to-white py-20 px-4 md:px-[4rem]">
+      <div className="max-w-7xl mx-auto flex flex-col items-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold text-green-800 text-center mb-4"
+        >
+          Stories of Transformation
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-center max-w-3xl text-gray-700 text-lg mb-12"
+        >
+          Hear from students around the world who experienced the Quranique difference —
+          diverse journeys, united by a deep connection to the Qur’an.
+        </motion.p>
 
-    const [isDesktop, setIsDesktop] = useState(window.innerWidth > 720);
-
-    useEffect(() => {
-        const sizeHandler = () => setIsDesktop(window.innerWidth > 720);
-        window.addEventListener("resize", sizeHandler);
-        sizeHandler(); // Set initial state
-        return () => window.removeEventListener("resize", sizeHandler);
-    }, []);
-
-    const visibleTestimonials = isDesktop ? 3 : 1;
-    const maxIndex = Math.max(testimonials.length - visibleTestimonials, 0);
-    const [index, setIndex] = useState(0);
-
-    const nextSlide = () => setIndex((prev) => (prev < (isDesktop ? maxIndex - 1 : maxIndex) ? prev + 1 : 0));
-    const prevSlide = () => setIndex((prev) => (prev > 0 ? prev - 1 : isDesktop ? maxIndex - 1 : maxIndex));
-
-    return (
-        <div className="w-full flex justify-center px-4 md:px-16">
-            <div className="w-full flex flex-col max-w-[90rem] gap-12 py-[4rem]">
-                <span className="flex flex-col gap-2">
-                    <p>Testimonials</p>
-                <h2 className="text-2xl md:text-5xl font-semibold">WHAT OUR CLIENTS THINK</h2>
-                </span>
-
-                <div className="relative w-full flex items-center justify-center overflow-hidden">
-                    {/* Left Chevron */}
-                    <span
-                        onClick={prevSlide}
-                        className="rounded-full absolute left-0 p-3 cursor-pointer border border-primary bg-goldCardBg shadow-md z-10"
-                    >
-                        <FaChevronLeft />
-                    </span>
-
-                    {/* Testimonials Container */}
-                    <div className="w-full overflow-hidden">
-                        <motion.div
-                            className="flex gap-8"
-                            animate={{ x: isDesktop ? `-${index * (100 / visibleTestimonials)}%` : `-${index * (100 / (visibleTestimonials * testimonials.length))}%` }}
-                            transition={{ type: "spring", stiffness: 100, damping: 12 }}
-                            style={{ width: `${(testimonials.length / visibleTestimonials) * 100}%` }}
-                        >
-                            {testimonials.map((testimonial, idx) => (
-                                <div
-                                    key={idx}
-                                    className="w-[20rem] hover:bg-primary hover:text-textcolor slowMo md:max-w-[30%] flex-grow flex flex-col gap-4 border border-primary p-6 px-8 bg-goldCardBg shadow-lg"
-                                >
-                                    <p>"{testimonial.text}"</p>
-                                    <h5 className="text-xl font-semibold">{testimonial.name}</h5>
-                                </div>
-                            ))}
-                        </motion.div>
-                    </div>
-
-                    {/* Right Chevron */}
-                    <span
-                        onClick={nextSlide}
-                        className="rounded-full absolute right-0 p-3 cursor-pointer border border-primary bg-goldCardBg shadow-md z-10"
-                    >
-                        <FaChevronRight />
-                    </span>
+        <div className="grid gap-8 md:grid-cols-2 w-full">
+          {testimonials.map((t, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="bg-white shadow-lg rounded-2xl p-6 md:p-8 border border-gray-100"
+            >
+              <FaQuoteLeft className="text-green-500 text-2xl mb-4" />
+              <p className="text-gray-700 text-base leading-relaxed mb-6">
+                {t.content}
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="text-2xl">{t.countryFlag}</div>
+                <div>
+                  <p className="font-semibold text-gray-800">{t.name}</p>
+                  <p className="text-sm text-gray-500">{t.location}</p>
                 </div>
-            </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
-    );
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 max-w-2xl text-center text-gray-700 text-lg"
+        >
+          These are just a few of the many stories we receive. Whether you’re a beginner,
+          a parent, or someone striving for Ijazah – your path begins here.{" "}
+          <span className="font-semibold text-green-700">Join Quranique</span> and start
+          your transformation today.
+        </motion.p>
+      </div>
+    </section>
+  );
 };
 
 export default Testimonials;

@@ -22,14 +22,14 @@ const Home = () => {
         <What />
         <About />
         {/* <Clerics /> */}
-        <Testimonials />
         <WhatWeDo />
-        <Video />
+        {/* <Video /> */}
         <BookingSteps />
         {/* <WhyQuranique /> */}
-        <Programmes />
-        <IjazahProgramme />
+        {/* <Programmes /> */}
+        {/* <IjazahProgramme /> */}
         <Pricing />
+        <Testimonials />
         <FAQs />
     </Element>
   )

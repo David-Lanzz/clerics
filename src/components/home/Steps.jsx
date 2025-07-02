@@ -30,7 +30,7 @@ const steps = [
 
 const BookingSteps = () => {
     return (
-        <div className="w-full bg-white py-[6rem] px-4 md:px-[4rem] flex justify-center">
+        <div className="w-full bg-primary py-[6rem] px-4 md:px-[4rem] flex justify-center">
             <div className="w-full max-w-[90rem] flex flex-col-reverse md:flex-row gap-16 items-center">
                 {/* Left: Steps */}
                 <motion.div
@@ -40,24 +40,24 @@ const BookingSteps = () => {
                     viewport={{ once: true }}
                     className="w-full md:w-1/2 flex flex-col gap-8"
                 >
-                    <h2 className="text-4xl font-bold text-green-800">Booking – Simple Multi-Step Enrollment</h2>
-                    <p className="text-lg text-gray-700">
+                    <h2 className="text-4xl font-bold text-white">Booking – Simple Multi-Step Enrollment</h2>
+                    <p className="text-lg text-gray-300">
                         Ready to embark on your Quranique journey? In just a few easy steps, you can schedule your first free session – no payment needed upfront.
                     </p>
                     <div className="flex flex-col gap-6">
                         {steps.map((step, i) => (
                             <div key={i} className="flex gap-4 items-start">
-                                <div className="text-white bg-green-700 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+                                <div className="text-primary bg-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
                                     {i + 1}
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-semibold">{step.title}</h3>
-                                    <p className="text-gray-600">{step.desc}</p>
+                                    <h3 className="text-lg text-white font-semibold">{step.title}</h3>
+                                    <p className="text-gray-400">{step.desc}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
-                    <button className="mt-6 w-fit bg-green-700 text-white px-6 py-3 rounded-xl text-lg font-semibold shadow hover:bg-green-800 transition">
+                    <button className="mt-6 w-fit bg-white text-primary px-6 py-3 rounded-xl text-lg font-semibold shadow hover:bg-white transition">
                         Enroll Now
                     </button>
                 </motion.div>
