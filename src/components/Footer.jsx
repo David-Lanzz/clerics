@@ -35,7 +35,7 @@ const Footer = () => {
             <div className="w-full max-w-[90rem] flex flex-col md:flex-row gap-[2rem] md:gap-[5rem]">
                 <div className="w-full md:w-1/2 flex flex-col gap-4">
                     <h3 className="text-2xl md:text-4xl font-semibold">Quranique</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur. Semper viverra ultrices varius eu.</p>
+                    <p>Master the Quran with the World's Best</p>
                     <span className="flex gap-8 text-xl items-center">
                         <a className='border border-primary rounded-full p-4' href="" target='_blank'><FaPhone /></a>
                         <a className='border border-primary rounded-full p-4' href="" target='_blank'><FaInstagram /></a>
