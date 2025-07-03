@@ -15,10 +15,6 @@ const Footer = () => {
             link: ``
         },
         {
-            title: `Our Clerics`,
-            link: ``
-        },
-        {
             title: `Contact`,
             link: ``
         }
