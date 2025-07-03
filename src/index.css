@@ -47,3 +47,23 @@ h5,
 button {
     @apply font-medium
 }
+
+ .hero2 {
+        background-image: url('/hero2.png');
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 70%;
+        background-color: #0E2C24;
+        /* optional but recommended */
+    }
+
+@media screen and (min-width: 720px) {
+    .hero2 {
+        background-image: url('/heroBg.png');
+        background-position-y: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: 0%;
+        /* optional but recommended */
+    }
+}
