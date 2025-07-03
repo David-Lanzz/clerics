@@ -13,12 +13,14 @@ import WhyQuranique from '../components/home/WHY'
 import WhatWeDo from '../components/home/WhatWeDo'
 import What from '../components/What'
 import BookingSteps from '../components/home/Steps'
+import Hero2 from '../components/home/Hero2'
+import FooterClerics from './FooterClerics'
 
 const Home = () => {
   
   return (
     <Element name='home' className=' flex flex-col overflow-hidden '>
-        <Hero />
+        <Hero2 />
         <What />
         <About />
         {/* <Clerics /> */}
@@ -31,6 +33,7 @@ const Home = () => {
         <Pricing />
         <Testimonials />
         <FAQs />
+        <FooterClerics />
     </Element>
   )
 }
