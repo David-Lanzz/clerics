@@ -165,7 +165,7 @@ const Navbar = () => {
             </AnimatePresence>
 
             <Outlet />
-            <Touch />
+            {/* <Touch /> */}
             <Footer />
         </div>
     );
