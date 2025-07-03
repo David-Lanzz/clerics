@@ -17,7 +17,7 @@ const Perks = () => {
     {
       title: "Innovative Learning",
       text: "We use the most effective teaching methods and resources to ensure a meaningful and enriching learning experience, helping you achieve your goals with confidence.",
-      image: "/about/middle.jpg",
+      image: "/cleric.jpg",
     },
     {
       title: "Guidance Every Step",
