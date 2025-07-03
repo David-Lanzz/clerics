@@ -19,14 +19,14 @@
     font-family: "Funnel Display";
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
 h5,
 .classic {
     font-family: 'stylish';
-}
+} */
 
 .standardBtn {
     @apply p-3 px-6 bg-primary text-textcolor border border-transparent

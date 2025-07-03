@@ -22,27 +22,29 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[100vh] max-h-[58rem] overflow-hidden">
-      {/* Background animation */}
-      <AnimatePresence>
-        <motion.img
-          key={currentImage}
-          src={images[currentImage]}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          initial={{ scale: zoomIn ? 1.1 : 1, opacity: 0.5 }}
-          animate={{ scale: zoomIn ? 1 : 1.1, opacity: 1 }}
-          exit={{ opacity: 0.5 }}
-          transition={{ duration: 5, ease: 'easeInOut' }}
-        />
-      </AnimatePresence>
+    <div className="w-full relative">
+      <div className="relative w-full h-[100vh] max-h-[58rem] overflow-hidden">
+        {/* Background animation */}
+        <AnimatePresence>
+          <motion.img
+            key={currentImage}
+            src={images[currentImage]}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            initial={{ scale: zoomIn ? 1.1 : 1, opacity: 0 }}
+            animate={{ scale: zoomIn ? 1 : 1.1, opacity: 1 }}
+            exit={{ opacity: 0.5 }}
+            transition={{ duration: 5, ease: 'easeInOut' }}
+          />
+        </AnimatePresence>
 
-      {/* Dark overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#000000cc] to-transparent z-10" />
+        {/* Dark overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0000007f] to-transparent z-10" />
+      </div>
 
-      {/* Optional children can go here */}
-      <div className="relative z-20">
-        <InfoSection />
+      <div className="w-[30rem] min-h-[20rem] text-white p-4 bg-[#000000c9] absolute left-1/2 bottom-[-80px] transform -translate-x-1/2 z-[20] flex flex-col gap-4 items-center justify-center">
+        <h3 className="text-3xl font-semibold">QURANIQUE</h3>
+        <p className="text-center">The World’s Leading 1:1 Online Quran Learning Platform – From the Heart of Egypt to Your Home</p>
       </div>
     </div>
   );
