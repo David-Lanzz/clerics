@@ -38,8 +38,8 @@ const Navbar = () => {
     const tabs = useMemo(() => [
         { title: "Home", link: "home" },
         { title: "About", link: "about" },
-        { title: "Our Clerics", link: "clerics", list: clerics },
-        { title: "My Bookings", link: `mybookings/${userId}` }
+        // { title: "Our Clerics", link: "clerics", list: clerics },
+        // { title: "My Bookings", link: `mybookings/${userId}` }
     ], [clerics, userId]);
 
     const isScrolled = scrollPosition > 550;
