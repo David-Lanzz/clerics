@@ -6,7 +6,7 @@ const About = () => {
             className="relative w-full flex flex-col gap-10 justify-center items-center px-4 md:px-[4rem] pb-[4rem] md:pb-[8rem]"
         >
             <div className="w-full max-w-[80rem] h-[30rem] relative">
-                <img src="/aboutBg.png" className="md:absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2" alt="" />
+                <img src="/aboutBg.png" className="md:absolute w-full md:w-auto md:left-1/2 md:top-1/2 transform md:-translate-y-1/2 md:-translate-x-1/2" alt="" />
                 <div className="flex flex-col md:text-white gap-4 relative md:pl-[200px] md:py-[92px]">
                     <h2 className="text-[2.3rem]">About Quranique</h2>
                     <p className="w-full md:max-w-[55%] ">Quranique is a global online platform offering personalised one-to-one Quran learning from Egypt’s most esteemed and qualified reciters and scholars. Whether you’re a complete beginner, returning after years, or an advanced student seeking Ijazah or mastery of Maqamat, Quranique is built around your goals, your pace, and your life.</p>
