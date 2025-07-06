@@ -51,7 +51,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[#00000028] to-transparent z-10" />
       </div>
 
-      <div className="w-[90%] md:w-[30rem] min-h-[20rem] text-white p-4 bg-[#000000c9] backdrop-blur-md absolute left-1/2 bottom-[-80px] transform -translate-x-1/2 z-[20] flex flex-col gap-4 items-center justify-center">
+      <div className="w-[90%] md:w-[30rem] min-h-[20rem] text-white p-4 bg-[#000000c9] backdrop-blur-md absolute left-1/2 bottom-0 md:bottom-[-80px] transform -translate-x-1/2 z-[20] flex flex-col gap-4 items-center justify-center">
         <h3 className="text-5xl font-semibold">QURANIQUE</h3>
         <p className="text-center">The World’s Leading 1:1 Online Quran Learning Platform – From the Heart of Egypt to Your Home</p>
       </div>
