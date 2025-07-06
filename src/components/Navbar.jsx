@@ -42,13 +42,13 @@ const Navbar = () => {
 
     const isScrolled = scrollPosition > 550;
     const isAuthOrBookingPage = pathname.includes('authenticate') || pathname.includes('booking');
-    const navTextColor = isScrolled || isAuthOrBookingPage ? "text-textcolor" : "text-textcolor";
-    const navBgColor = isScrolled ? "bg-transparent" : "bg-transparent";
+    const navTextColor = isScrolled || isAuthOrBookingPage ? "text-primary" : "text-textcolor";
+    const navBgColor = isScrolled ? "bg-white/70" : "bg-transparent";
 
     return (
         <div className="w-full flex flex-col relative">
             {/* Navbar */}
-            <div className={`w-full fixed top-0 left-0 z-[1000] backdrop-blur-sm px-4 md:px-[4rem] slowMo ${navBgColor} flex justify-center`}>
+            <div className={`w-full fixed top-0 left-0 z-[1000] backdrop-blur-md px-4 md:px-[4rem] slowMo ${navBgColor} flex justify-center`}>
                 <div className="w-full max-w-[90rem] flex justify-between items-center">
                     <img src="/logo.png" className="h-20" alt="" />
 
