@@ -32,7 +32,7 @@ const Hero = () => {
 
   return (
     <div className="w-full relative">
-      <div className="relative w-full h-[100vh] max-h-[58rem] overflow-hidden">
+      <div className="relative w-full h-[100svh] max-h-[58rem] overflow-hidden">
         {/* Background animation */}
         <AnimatePresence>
           <motion.img
