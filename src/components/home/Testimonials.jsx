@@ -1,10 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaQuoteLeft } from "react-icons/fa";
-<<<<<<< HEAD
 import { Element } from "react-scroll";
-=======
->>>>>>> 9257317298357d3379c4cc3eb1de1180e2e12346
 
 const testimonials = [
   {
@@ -39,11 +36,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-<<<<<<< HEAD
     <Element name="testimonials" className="w-full bg-gradient-to-br from-green-50 to-white py-20 px-4 md:px-[4rem]">
-=======
-    <section className="w-full bg-gradient-to-br from-green-50 to-white py-20 px-4 md:px-[4rem]">
->>>>>>> 9257317298357d3379c4cc3eb1de1180e2e12346
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -103,11 +96,7 @@ const Testimonials = () => {
           your transformation today.
         </motion.p>
       </div>
-<<<<<<< HEAD
     </Element>
-=======
-    </section>
->>>>>>> 9257317298357d3379c4cc3eb1de1180e2e12346
   );
 };
 
