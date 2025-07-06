@@ -4,7 +4,6 @@ import InfoSection from './Info';
 
 const images = [
  '/hero11.jpg',
- '/hero1.jpg',
  '/hero2.jpg',
  '/hero3.jpg',
  '/hero4.jpg',
