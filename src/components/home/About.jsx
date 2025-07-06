@@ -1,16 +1,9 @@
-<<<<<<< HEAD
 import { Element } from "react-scroll";
-=======
->>>>>>> 9257317298357d3379c4cc3eb1de1180e2e12346
 
 const About = () => {
 
     return (
-<<<<<<< HEAD
         <Element name="about"
-=======
-        <div
->>>>>>> 9257317298357d3379c4cc3eb1de1180e2e12346
             className="relative w-full flex flex-col gap-10 justify-center items-center px-4 md:px-[4rem] pb-[4rem] md:pb-[8rem]"
         >
             <div className="w-full max-w-[80rem] h-[30rem] relative">
@@ -22,11 +15,7 @@ const About = () => {
                 </div>
             </div>
             <p className="text-center max-w-4xl pt-6">We pair you with elite Egyptian teachers trained in Al-Azhar tradition, fluent in English, and deeply experienced in guiding non-Arabic speakers of all ages. From Tajweed and Recitation to Hifz, Maqams, Tafseer, and Ijazah preparation – every lesson is live, tailored, and rooted in centuries of scholarly excellence.</p>
-<<<<<<< HEAD
         </Element>
-=======
-        </div>
->>>>>>> 9257317298357d3379c4cc3eb1de1180e2e12346
     );
 };
 
