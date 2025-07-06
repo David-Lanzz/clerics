@@ -52,7 +52,7 @@ const Hero = () => {
       </div>
 
       <div className="w-[90%] md:w-[50rem] min-h-[20rem] text-white p-4 bg-[#000000c9] backdrop-blur-md absolute left-1/2 bottom-0 md:bottom-[-80px] transform -translate-x-1/2 z-[20] flex flex-col gap-4 items-center justify-center">
-        <h3 className="text-4xl font-semibold text-center">The World’s Leading 1:1 <span className="text-green-400"> Online Quran Learning Platform</span> – From the Heart of Egypt to Your Home</h3>
+        <h3 className="text-2xl md:text-4xl font-semibold text-center">The World’s Leading 1:1 <span className="text-green-400"> Online Quran Learning Platform</span> – From the Heart of Egypt to Your Home</h3>
         <p className="text-center font-semibold">Master the Quran with the World's Best — One Teacher, One Student, One Journey.</p>
       </div>
     </div>
