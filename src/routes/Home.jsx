@@ -15,6 +15,7 @@ import What from '../components/What'
 import BookingSteps from '../components/home/Steps'
 import Hero2 from '../components/home/Hero2'
 import FooterClerics from './FooterClerics'
+import ContactForm from '../components/home/Form'
 
 const Home = () => {
   
@@ -34,6 +35,7 @@ const Home = () => {
         <Testimonials />
         <FAQs />
         <FooterClerics />
+        <ContactForm />
     </Element>
   )
 }

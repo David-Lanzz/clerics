@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Element } from 'react-scroll';
 
 const What = () => {
     return (
-        <div className="w-full flex justify-center px-4 md:px-[4rem] py-[6rem] bg-[#f9f9f9]">
+        <Element name='whatwedo' className="w-full flex justify-center px-4 md:px-[4rem] py-[6rem] bg-[#f9f9f9]">
             <div className="w-full max-w-[90rem] flex flex-col md:flex-row gap-12 items-center">
                 {/* Image */}
                 <motion.div
@@ -43,7 +44,7 @@ const What = () => {
                     </p>
                 </motion.div>
             </div>
-        </div>
+        </Element>
     );
 };
 

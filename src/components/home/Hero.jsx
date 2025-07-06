@@ -3,8 +3,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import InfoSection from './Info';
 
 const images = [
-  '/hero1.jpg', '/hero2.jpg', '/hero3.jpg', '/hero4.jpg', '/hero5.jpg',
-  '/hero6.jpg', '/hero7.jpg', '/hero8.jpg', '/hero9.jpg', '/hero10.jpg', '/hero11.jpg'
+ '/hero11.jpg',
+ '/hero1.jpg',
+ '/hero2.jpg',
+ '/hero3.jpg',
+ '/hero4.jpg',
+ '/hero5.jpg',
+ '/hero6.jpg',
+ '/hero7.jpg',
+ '/hero8.jpg',
+ '/hero9.jpg',
+ '/hero10.jpg',
 ];
 
 const Hero = () => {
@@ -39,11 +48,11 @@ const Hero = () => {
         </AnimatePresence>
 
         {/* Dark overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0000007f] to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#00000028] to-transparent z-10" />
       </div>
 
-      <div className="w-[30rem] min-h-[20rem] text-white p-4 bg-[#000000c9] absolute left-1/2 bottom-[-80px] transform -translate-x-1/2 z-[20] flex flex-col gap-4 items-center justify-center">
-        <h3 className="text-3xl font-semibold">QURANIQUE</h3>
+      <div className="w-[30rem] min-h-[20rem] text-white p-4 bg-[#000000c9] backdrop-blur-md absolute left-1/2 bottom-[-80px] transform -translate-x-1/2 z-[20] flex flex-col gap-4 items-center justify-center">
+        <h3 className="text-5xl font-semibold">QURANIQUE</h3>
         <p className="text-center">The World’s Leading 1:1 Online Quran Learning Platform – From the Heart of Egypt to Your Home</p>
       </div>
     </div>

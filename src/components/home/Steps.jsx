@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Element, scroller } from 'react-scroll';
 
 const steps = [
     {
@@ -30,7 +31,7 @@ const steps = [
 
 const BookingSteps = () => {
     return (
-        <div className="w-full bg-primary py-[6rem] px-4 md:px-[4rem] flex justify-center">
+        <Element name='bookingsteps' className="w-full bg-primary py-[6rem] px-4 md:px-[4rem] flex justify-center">
             <div className="w-full max-w-[90rem] flex flex-col-reverse md:flex-row gap-16 items-center">
                 {/* Left: Steps */}
                 <motion.div
@@ -57,7 +58,11 @@ const BookingSteps = () => {
                             </div>
                         ))}
                     </div>
-                    <button className="mt-6 w-fit bg-white text-primary px-6 py-3 rounded-xl text-lg font-semibold shadow hover:bg-white transition">
+                    <button onClick={() => {
+                        scroller.scrollTo('contact', {
+                            smooth: "easeInOutQuart"
+                        })
+                    }} className="mt-6 w-fit bg-white text-primary px-6 py-3 rounded-xl text-lg font-semibold shadow hover:bg-white transition">
                         Enroll Now
                     </button>
                 </motion.div>
@@ -77,7 +82,7 @@ const BookingSteps = () => {
                     />
                 </motion.div>
             </div>
-        </div>
+        </Element>
     );
 };
 

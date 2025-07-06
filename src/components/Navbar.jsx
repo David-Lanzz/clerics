@@ -29,23 +29,21 @@ const Navbar = () => {
 
     const handleNavigate = (link) => {
         setIsMobileMenuOpen(false);
-        navigate(link === "home" ? "/" : `/${link}`);
-        setTimeout(() => {
-            scroller.scrollTo(link, { smooth: "easeInOutQuart" });
-        }, 100);
+        scroller.scrollTo(link, { smooth: "easeInOutQuart" });
     };
 
     const tabs = useMemo(() => [
         { title: "Home", link: "home" },
         { title: "About", link: "about" },
-        // { title: "Our Clerics", link: "clerics", list: clerics },
-        // { title: "My Bookings", link: `mybookings/${userId}` }
+        { title: "What We Do", link: "whatwedo" },
+        { title: "Why Quranique", link: "whyquranique" },
+        { title: "Booking Steps", link: "bookingsteps" },
     ], [clerics, userId]);
 
     const isScrolled = scrollPosition > 550;
     const isAuthOrBookingPage = pathname.includes('authenticate') || pathname.includes('booking');
     const navTextColor = isScrolled || isAuthOrBookingPage ? "text-textcolor" : "text-textcolor";
-    const navBgColor = isScrolled ? "bg-primary/30" : "bg-transparent";
+    const navBgColor = isScrolled ? "bg-transparent" : "bg-transparent";
 
     return (
         <div className="w-full flex flex-col relative">
@@ -83,8 +81,11 @@ const Navbar = () => {
                         ))}
                         <button
                             className={`slowMo ${isScrolled || isAuthOrBookingPage ? "standardBtn" : "standardBtnLight"}`}
-                            onClick={() => handleNavigate(`booking/${userId}`)}
-                            onDoubleClick={() => navigate('/authorizeAdmin')}
+                            onClick={() => {
+                                scroller.scrollTo('contact', {
+                                    smooth: "easeInOutQuart"
+                                })
+                            }}
                         >
                             Book Now
                         </button>
@@ -154,7 +155,11 @@ const Navbar = () => {
 
                             {/* Book Now Button */}
                             <button
-                                onClick={() => handleNavigate(`booking/${userId}`)}
+                                onClick={() => {
+                                    scroller.scrollTo('contact', {
+                                        smooth: "easeInOutQuart"
+                                    })
+                                }}
                                 className="mt-6 py-2 px-6 bg-primary text-white rounded-lg text-lg shadow-md hover:bg-opacity-90 transition"
                             >
                                 Book Now

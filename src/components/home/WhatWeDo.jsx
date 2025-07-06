@@ -1,8 +1,9 @@
 import React from 'react';
+import { Element, scroller } from 'react-scroll';
 
 const WhatWeDo = () => {
     return (
-        <div className='w-full flex justify-center md:max-h-[42rem] bg-secondary pr-4 md:pr-[4rem]'>
+        <Element name='whyquranique' className='w-full flex justify-center md:max-h-[42rem] bg-secondary pr-4 md:pr-[4rem]'>
             <div className="w-full flex flex-col md:flex-row gap-[2rem] md:gap-[4rem]">
                 <div className="w-full md:w-[40%]">
                     <img src="/wwd.png" alt="Why Quranique" className="w-full h-auto object-cover" />
@@ -32,13 +33,17 @@ const WhatWeDo = () => {
                         <p>
                             <strong>Start your personalised Quran learning journey today.</strong>
                         </p>
-                        <button className="mt-4 px-6 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition duration-300">
+                        <button onClick={() => {
+                            scroller.scrollTo('contact', {
+                                smooth: "easeInOutQuart"
+                            })
+                        }} className="mt-4 px-6 py-2 bg-primary text-white rounded-xl hover:bg-green-700 transition duration-300">
                             Book Your Free Trial Now
                         </button>
                     </div>
                 </div>
             </div>
-        </div>
+        </Element>
     );
 };
 

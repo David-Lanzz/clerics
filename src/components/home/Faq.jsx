@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { Element } from "react-scroll";
 
 const faqs = [
   {
@@ -198,7 +199,7 @@ export default function FAQs() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="max-w-4xl mx-auto px-4 py-10">
+    <Element name="faqs" className="max-w-4xl mx-auto px-4 py-10">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
         Frequently Asked Questions
       </h2>
@@ -213,6 +214,6 @@ export default function FAQs() {
           />
         ))}
       </div>
-    </section>
+    </Element>
   );
 }
