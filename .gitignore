@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+dist.zip
+public/cleric.mp4
+public/public/heroBg.gif
+public/clerics.png
