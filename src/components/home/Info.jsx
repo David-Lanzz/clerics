@@ -26,7 +26,7 @@ const InfoSection = () => {
                         Elevate Your Quranic Journey
                     </h2>
                     <p className="text-lg text-gray-700 mb-4">
-                        Join Quranique for a truly personal learning experience — one teacher, one student, one beautiful path to mastering the Quran.
+                        Join Qurania for a truly personal learning experience — one teacher, one student, one beautiful path to mastering the Quran.
                     </p>
                     <p className="text-lg text-gray-700 mb-6">
                         From Egypt’s esteemed scholars to your home, our program offers unmatched depth, clarity, and connection.

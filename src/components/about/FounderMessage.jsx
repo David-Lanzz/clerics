@@ -25,7 +25,7 @@ const FoundersMessage = () => {
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.6 }}
           className="italic text-lg"
         >
-          As-salāmu ‘alaykum wa raḥmatullāh! Praise be to Allah who has made the Qur’an a light for mankind. It is my honour to welcome you to Quranique. My name is Shaikh Abu Bakr Rashwan, and as the Founder and Director of Quranique, I carry with me over 20 years of Qur’anic teaching experience from Cairo. Having graduated from Al-Azhar and been granted multiple Ijazahs in recitation, I started Quranique with a simple dream: to share Egypt’s blessed Qur’anic legacy with learners across the world.
+          As-salāmu ‘alaykum wa raḥmatullāh! Praise be to Allah who has made the Qur’an a light for mankind. It is my honour to welcome you to Qurania. My name is Shaikh Abu Bakr Rashwan, and as the Founder and Director of Qurania, I carry with me over 20 years of Qur’anic teaching experience from Cairo. Having graduated from Al-Azhar and been granted multiple Ijazahs in recitation, I started Qurania with a simple dream: to share Egypt’s blessed Qur’anic legacy with learners across the world.
         </motion.p>
         
         <motion.p 
@@ -34,7 +34,7 @@ const FoundersMessage = () => {
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.9 }}
           className="mt-4 text-lg"
         >
-         Growing up in Egypt, a land where the Qur’an’s melody fills the streets, I developed a deep love for recitation at a young age. I studied under illustrious teachers who traced their knowledge back to the Prophet ﷺ. Now, through Quranique, I wish to extend that chain to you. Our academy is built on sincerity, excellence, and personalization. We treat each student as part of our family, taking care to nurture your progress step by step – just as my own teachers did with me.
+         Growing up in Egypt, a land where the Qur’an’s melody fills the streets, I developed a deep love for recitation at a young age. I studied under illustrious teachers who traced their knowledge back to the Prophet ﷺ. Now, through Qurania, I wish to extend that chain to you. Our academy is built on sincerity, excellence, and personalization. We treat each student as part of our family, taking care to nurture your progress step by step – just as my own teachers did with me.
         </motion.p>
         
         <motion.p 
@@ -45,7 +45,7 @@ const FoundersMessage = () => {
         >
           Shaikh Abu Bakr Rashwan
         </motion.p>
-        <p className="text-lg">Director, Quranique</p>
+        <p className="text-lg">Director, Qurania</p>
         
         {/* <motion.div 
           initial={{ opacity: 0, y: 30 }} 
@@ -58,7 +58,7 @@ const FoundersMessage = () => {
             Ilyas Khan is a globally recognised strategist, senior advisor, and development expert, with decades of experience shaping policy and investment across the Middle East, Africa, and Europe.
           </p>
           <p className="mt-4 text-lg">
-            Quranique reflects his commitment to authenticity, excellence, and meaningful impact, combining Egypt’s rich Qur’anic tradition with world-class digital access for learners everywhere.
+            Qurania reflects his commitment to authenticity, excellence, and meaningful impact, combining Egypt’s rich Qur’anic tradition with world-class digital access for learners everywhere.
           </p>
         </motion.div> */}
       </motion.div>

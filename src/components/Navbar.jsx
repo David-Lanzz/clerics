@@ -36,7 +36,7 @@ const Navbar = () => {
         { title: "Home", link: "home" },
         { title: "About", link: "about" },
         { title: "What We Do", link: "whatwedo" },
-        { title: "Why Quranique", link: "whyquranique" },
+        { title: "Why Qurania", link: "whyqurania" },
         { title: "Booking Steps", link: "bookingsteps" },
     ], [clerics, userId]);
 

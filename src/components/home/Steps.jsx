@@ -5,7 +5,7 @@ import { Element, scroller } from 'react-scroll';
 const steps = [
     {
         title: "Fill Out Your Details",
-        desc: "Start by providing your name, contact info, and time zone. You’ll also create your Quranique portal login.",
+        desc: "Start by providing your name, contact info, and time zone. You’ll also create your Qurania portal login.",
     },
     {
         title: "Tell Us Your Goals & Preferences",
@@ -43,7 +43,7 @@ const BookingSteps = () => {
                 >
                     <h2 className="text-4xl font-bold text-white">Booking – Simple Multi-Step Enrollment</h2>
                     <p className="text-lg text-gray-300">
-                        Ready to embark on your Quranique journey? In just a few easy steps, you can schedule your first free session – no payment needed upfront.
+                        Ready to embark on your Qurania journey? In just a few easy steps, you can schedule your first free session – no payment needed upfront.
                     </p>
                     <div className="flex flex-col gap-6">
                         {steps.map((step, i) => (

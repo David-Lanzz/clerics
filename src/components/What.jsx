@@ -30,8 +30,8 @@ const What = () => {
                     <h2 className="text-4xl font-bold text-green-800">What We Do</h2>
 
                     <p className="text-lg leading-relaxed">
-                        <strong>Quranique</strong> is a global online platform offering personalised one-to-one Quran learning from Egypt’s most esteemed and qualified reciters and scholars.
-                        Whether you’re a complete beginner, returning after years, or an advanced student seeking <strong>Ijazah</strong> or mastery of <strong>Maqamat</strong>, Quranique is built around your goals, your pace, and your life.
+                        <strong>Qurania</strong> is a global online platform offering personalised one-to-one Quran learning from Egypt’s most esteemed and qualified reciters and scholars.
+                        Whether you’re a complete beginner, returning after years, or an advanced student seeking <strong>Ijazah</strong> or mastery of <strong>Maqamat</strong>, Qurania is built around your goals, your pace, and your life.
                     </p>
 
                     <p className="text-lg leading-relaxed">

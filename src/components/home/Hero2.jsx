@@ -8,7 +8,7 @@ const Hero2 = () => {
             Elevate Your <br /> Quranic Journey
           </h1>
           <p className="text-lg mb-4 text-gray-300">
-            Join Quranique for a truly personal learning experience — one teacher,
+            Join Qurania for a truly personal learning experience — one teacher,
             one student, one beautiful path to mastering the Quran.
           </p>
           <p className="text-lg mb-6 text-gray-300">

@@ -6,7 +6,7 @@ import { Element } from "react-scroll";
 
 const faqs = [
   {
-    question: "Who are the Quranique instructors, and what are their qualifications?",
+    question: "Who are the Qurania instructors, and what are their qualifications?",
     answer: {
       type: "list",
       content: [
@@ -46,7 +46,7 @@ const faqs = [
     answer: {
       type: "list",
       content: [
-        "Classes are conducted via Quranique’s web platform or Zoom.",
+        "Classes are conducted via Qurania’s web platform or Zoom.",
         "You’ll need:",
         [
           "Device: Computer, tablet, or smartphone (larger screen preferred)",

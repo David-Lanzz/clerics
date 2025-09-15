@@ -9,7 +9,7 @@ import Programmes from '../components/home/Programmes'
 import IjazahProgramme from '../components/home/Ijazah'
 import Pricing from '../components/home/Pricing'
 import FAQs from '../components/home/Faq'
-import WhyQuranique from '../components/home/WHY'
+import WhyQurania from '../components/home/WHY'
 import WhatWeDo from '../components/home/WhatWeDo'
 import What from '../components/What'
 import BookingSteps from '../components/home/Steps'
@@ -28,7 +28,7 @@ const Home = () => {
         <WhatWeDo />
         {/* <Video /> */}
         <BookingSteps />
-        {/* <WhyQuranique /> */}
+        {/* <WhyQurania /> */}
         {/* <Programmes /> */}
         {/* <IjazahProgramme /> */}
         <Pricing />
