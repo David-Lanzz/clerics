@@ -14,7 +14,7 @@ const What = () => {
                     className="w-full md:w-1/2"
                 >
                     <img
-                        src="/aboutt.png"
+                        src="/qurania.jpg"
                         alt="Quran Learning"
                         className="w-full h-auto rounded-2xl shadow-lg object-cover"
                     />

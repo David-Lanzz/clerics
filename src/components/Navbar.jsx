@@ -50,7 +50,7 @@ const Navbar = () => {
             {/* Navbar */}
             <div className={`w-full fixed top-0 left-0 z-[1000] backdrop-blur-md py-2 px-4 md:px-[4rem] slowMo ${navBgColor} flex justify-center`}>
                 <div className="w-full max-w-[90rem] flex justify-between items-center">
-                    <img src="/logo.png" className="h-16" alt="" />
+                    <img src="/qurania.jpg" className="h-16" alt="" />
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex gap-8 items-center">
