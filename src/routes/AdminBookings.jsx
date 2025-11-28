@@ -4,7 +4,7 @@ import { editBooking, getAllBookings } from '../services'
 import { Element, scroller } from 'react-scroll'
 import { FaCheck, FaChevronRight, FaClock, FaEnvelope, FaX } from 'react-icons/fa6'
 import { RiSendPlane2Line } from 'react-icons/ri'
-import { toast } from 'react-toastify'
+import { toast } from "sonner"
 
 
 const AdminBookings = () => {

@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { FaChevronRight, FaClock, FaEnvelope } from 'react-icons/fa'
 import { FaX } from 'react-icons/fa6'
 import { RiSendPlane2Line } from 'react-icons/ri'
-import { toast } from 'react-toastify'
+import { toast } from "sonner"
 
 const UserBookings = () => {
 

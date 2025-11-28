@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useSearchParams } from "react-router-dom";
 import { createCleric, getClericById, updateCleric, uploadImage } from "../services";
-import { toast } from "react-toastify";
+import { toast } from "sonner";
 
 export default function UserForm() {
   const [searchParams] = useSearchParams()

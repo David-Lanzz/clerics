@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom"
-import { toast, ToastContainer } from "react-toastify"
 import Navbar from "./components/Navbar"
 import Home from "./routes/Home"
 import About from "./routes/About"
@@ -13,8 +12,6 @@ import AdminBookings from "./routes/AdminBookings"
 import Booking from "./routes/Booking"
 import axios from "axios"
 import { useEffect } from "react"
-import { createCleric } from "./services"
-import { clericsList } from "../data"
 import UserBookings from "./routes/UserBookings"
 import UserEmailVerification from "./routes/UserEmail"
 import Signup from "./routes/Signup"
@@ -24,24 +21,25 @@ import ClericNav from "./routes/ClericNav"
 import ClericBookings from "./routes/ClericBookings"
 import SmoothScroll from "./SmoothScroll"
 import AvailabilityPicker from "./routes/DateTimePicker"
+import { toast } from "sonner"
+import { Toaster } from "sonner"
 
 
 function App() {
 
-  const responseInterceptor = axios.interceptors.response.use((response) => {
-    if (response?.data?.notification) {
-      toast.success(response?.data?.notification)
-    }
-    return response
-  }, (error) => {
-    if (error?.data?.notification) {
-      console.log(error.data)
-      toast.success(error?.data?.notification)
-    }
-    throw error
-  })
-
   useEffect(() => {
+    const responseInterceptor = axios.interceptors.response.use((response) => {
+      if (response?.data?.notification) {
+        toast.success(response?.data?.notification)
+      }
+      return response
+    }, (error) => {
+      if (error?.response?.data?.notification) {
+        console.log(error?.response?.data?.notification)
+        toast.error(error?.response?.data?.notification)
+      }
+      throw error
+    })
 
     return () => axios.interceptors.response.eject(responseInterceptor)
   }, [])
@@ -53,7 +51,7 @@ function App() {
   return (
     <div className="text-primary bg-goldCardBg">
       <SmoothScroll />
-      <ToastContainer />
+      <Toaster richColors />
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route index element={<Home />} />
