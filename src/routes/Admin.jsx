@@ -32,8 +32,8 @@ const Admin = () => {
             >
                 <h2 className="text-xl font-semibold tracking-wide">Admin Panel</h2>
                 <nav className="flex flex-col gap-4">
-                    <button className="bg-goldCardBg p-2 px-6 text-primary rounded-md" onClick={() => handleNavigation(`/admin/${id}`, 'clerics')}>Clerics</button>
                     <button className="bg-goldCardBg p-2 px-6 text-primary rounded-md" onClick={() => handleNavigation('bookings', 'bookings')}>Bookings</button>
+                    <button className="bg-goldCardBg p-2 px-6 text-primary rounded-md" onClick={() => handleNavigation('availability', 'availability')}>Availability</button>
                     <button className="bg-goldCardBg p-2 px-6 text-primary rounded-md" onClick={() => handleNavigation(`/`, 'home')}>Back to Home</button>
                 </nav>
             </aside>

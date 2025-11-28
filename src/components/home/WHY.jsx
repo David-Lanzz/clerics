@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const WhyQurania = () => {
+const WhyQuranile = () => {
   return (
     <div className="w-full flex justify-center bg-greenBg py-20 px-6 text-white">
       <div className="max-w-5xl w-full flex flex-col items-center text-center gap-10">
@@ -13,7 +13,7 @@ const WhyQurania = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Why Qurania?
+          Why Quranile?
         </motion.h2>
 
         {/* Highlights */}
@@ -31,7 +31,7 @@ const WhyQurania = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <p className="mb-4 font-light">
-            Qurania is about reading the Quran but also about living it — beautifully,
+            Quranile is about reading the Quran but also about living it — beautifully,
             correctly, and with a connection that transforms.
           </p>
           <p className="font-light">
@@ -103,4 +103,4 @@ const benefits = [
   },
 ];
 
-export default WhyQurania;
+export default WhyQuranile;

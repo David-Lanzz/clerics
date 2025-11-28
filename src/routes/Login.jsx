@@ -33,9 +33,9 @@ const Login = () => {
             login(formData).then(data => {
                 localStorage.setItem('userId', data?.id)
                 toast.success("Login successful!")
-                navigate(`/mybookings/${data?.id}`);
+                navigate(`/booking/${data?.id}`);
                 setTimeout(() => {
-                    scroller.scrollTo('mybookings', { smooth: true, offset: -100 })
+                    scroller.scrollTo('booking', { smooth: true, offset: -100 })
                 }, 100);
             })
         }

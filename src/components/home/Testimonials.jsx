@@ -9,28 +9,28 @@ const testimonials = [
     location: "London, UK",
     countryFlag: "🇬🇧",
     content:
-      "I’ve been Muslim all my life in the UK, but as a busy professional I never got beyond basic Qur’an reading. Qurania has truly been life-changing for me. In just 6 months, my Egyptian teacher helped me correct my Tajweed and I even memorized three new surahs – something I never thought I could do at 35! The one-on-one attention and the way they tied every lesson to real life made it so motivating. I now start each day by reviewing Qur’an, and it gives me peace and focus. My only regret is not starting sooner. Thank you, Qurania, for unlocking this treasure for me.",
+      "I’ve been Muslim all my life in the UK, but as a busy professional I never got beyond basic Qur’an reading. Quranile has truly been life-changing for me. In just 6 months, my Egyptian teacher helped me correct my Tajweed and I even memorized three new surahs – something I never thought I could do at 35! The one-on-one attention and the way they tied every lesson to real life made it so motivating. I now start each day by reviewing Qur’an, and it gives me peace and focus. My only regret is not starting sooner. Thank you, Quranile, for unlocking this treasure for me.",
   },
   {
     name: "Michael (Mikael) R.",
     location: "Los Angeles, USA",
     countryFlag: "🇺🇸",
     content:
-      "As a recent convert to Islam here in California, I felt overwhelmed trying to learn the Qur’an from scratch. Qurania came to my rescue. They paired me with a kind, patient Ustadh who understood exactly where I was coming from. He not only teaches me how to read Arabic letters and recite, but also shares the beautiful meanings behind verses. I love how modern and organized the platform is – scheduling on the app, lesson reminders, even recordings of my recitation to track progress. Last week I finished reading my very first surah in Arabic! My heart soared.",
+      "As a recent convert to Islam here in California, I felt overwhelmed trying to learn the Qur’an from scratch. Quranile came to my rescue. They paired me with a kind, patient Ustadh who understood exactly where I was coming from. He not only teaches me how to read Arabic letters and recite, but also shares the beautiful meanings behind verses. I love how modern and organized the platform is – scheduling on the app, lesson reminders, even recordings of my recitation to track progress. Last week I finished reading my very first surah in Arabic! My heart soared.",
   },
   {
     name: "Aliya M.",
     location: "Sydney, Australia",
     countryFlag: "🇦🇺",
     content:
-      "We enrolled our 10-year-old son in Qurania from Sydney, and it’s been fantastic. Finding a good local Quran teacher with authentic recitation was tough, but now he meets online with a certified Egyptian Qari three times a week. I occasionally listen in and I’m amazed at how engaged our son is. Despite the time zone difference, Qurania accommodated our schedule easily. The progress is evident: my child’s pronunciation has improved, and he actually looks forward to classes.",
+      "We enrolled our 10-year-old son in Quranile from Sydney, and it’s been fantastic. Finding a good local Quran teacher with authentic recitation was tough, but now he meets online with a certified Egyptian Qari three times a week. I occasionally listen in and I’m amazed at how engaged our son is. Despite the time zone difference, Quranile accommodated our schedule easily. The progress is evident: my child’s pronunciation has improved, and he actually looks forward to classes.",
   },
   {
     name: "Yusuf H.",
     location: "Toronto, Canada",
     countryFlag: "🇨🇦",
     content:
-      "Qurania gave me the confidence to finally pursue my Ijazah. In Canada, I learned to read Qur’an as a youngster but never dreamed I could reach an advanced level. Under the mentorship of Shaikh Abu Bakr and my instructor, I embarked on the Ijazah program. We went page by page, and slowly I felt my skills sharpen. I just completed my final recitation of 30th Juz. Qurania isn’t just a school, it’s a guiding light. If you have a dream to excel in Qur’an, this is where it comes true.",
+      "Quranile gave me the confidence to finally pursue my Ijazah. In Canada, I learned to read Qur’an as a youngster but never dreamed I could reach an advanced level. Under the mentorship of Shaikh Abu Bakr and my instructor, I embarked on the Ijazah program. We went page by page, and slowly I felt my skills sharpen. I just completed my final recitation of 30th Juz. Quranile isn’t just a school, it’s a guiding light. If you have a dream to excel in Qur’an, this is where it comes true.",
   },
 ];
 
@@ -54,7 +54,7 @@ const Testimonials = () => {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-center max-w-3xl text-gray-700 text-lg mb-12"
         >
-          Hear from students around the world who experienced the Qurania difference —
+          Hear from students around the world who experienced the Quranile difference —
           diverse journeys, united by a deep connection to the Qur’an.
         </motion.p>
 
@@ -92,7 +92,7 @@ const Testimonials = () => {
         >
           These are just a few of the many stories we receive. Whether you’re a beginner,
           a parent, or someone striving for Ijazah – your path begins here.{" "}
-          <span className="font-semibold text-green-700">Join Qurania</span> and start
+          <span className="font-semibold text-green-700">Join Quranile</span> and start
           your transformation today.
         </motion.p>
       </div>

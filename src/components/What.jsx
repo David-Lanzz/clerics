@@ -14,7 +14,7 @@ const What = () => {
                     className="w-full md:w-1/2"
                 >
                     <img
-                        src="/qurania.jpg"
+                        src="/quranile.jpg"
                         alt="Quran Learning"
                         className="w-full h-auto rounded-2xl shadow-lg object-cover"
                     />
@@ -30,8 +30,8 @@ const What = () => {
                     <h2 className="text-4xl font-bold text-green-800">What We Do</h2>
 
                     <p className="text-lg leading-relaxed">
-                        <strong>Qurania</strong> is a global online platform offering personalised one-to-one Quran learning from Egypt’s most esteemed and qualified reciters and scholars.
-                        Whether you’re a complete beginner, returning after years, or an advanced student seeking <strong>Ijazah</strong> or mastery of <strong>Maqamat</strong>, Qurania is built around your goals, your pace, and your life.
+                        <strong>Quranile</strong> is a global online platform offering personalised one-to-one Quran learning from Egypt’s most esteemed and qualified reciters and scholars.
+                        Whether you’re a complete beginner, returning after years, or an advanced student seeking <strong>Ijazah</strong> or mastery of <strong>Maqamat</strong>, Quranile is built around your goals, your pace, and your life.
                     </p>
 
                     <p className="text-lg leading-relaxed">

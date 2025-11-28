@@ -56,7 +56,7 @@ const IjazahProgramme = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
         >
-          <p className="text-primary">📧 info@qurania.com | 📱 +20 123 456 7890</p>
+          <p className="text-primary">📧 info@quranile.com | 📱 +20 123 456 7890</p>
           <motion.button
             className="px-6 py-3 text-lg font-semibold bg-goldCardBg hover:bg-goldCardBg/80 rounded-full"
             whileHover={{ scale: 1.05 }}
@@ -90,7 +90,7 @@ const programmeDetails = [
   { title: "Recitation (Tilawah)", description: "Master the art of Qur’anic recitation with precision and Tajweed." },
   { title: "Memorisation (Hifz)", description: "Commit the entire Qur’an to memory with expert guidance." },
   { title: "Specific Qira’at (on request)", description: "Specialised training in various Qira’at based on request." },
-  { title: "Why Qurania?", description: "Certified Egyptian scholars, authentic Sanad, personalised mentorship, and global accessibility." },
+  { title: "Why Quranile?", description: "Certified Egyptian scholars, authentic Sanad, personalised mentorship, and global accessibility." },
 ];
 
 const journeySteps = [

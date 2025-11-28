@@ -46,3 +46,21 @@ export const getUser = async (id) => {
         throw error
     }
 }
+
+export const updateAvailability = async (body) => {
+  try {
+    const response = await axios.put(
+      `${baseUrl}/admin/updateAvailability/${body?.id}`,
+      { availability: body?.availability } // ✅ wrap inside an "availability" key
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error updating availability:", error.response?.data || error);
+    throw error;
+  }
+};
+
+export const getAdmin = async () => {
+    const response = await axios.get(`${baseUrl}/admin`)
+    return response.data
+}

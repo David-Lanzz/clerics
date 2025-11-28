@@ -9,13 +9,14 @@ import Programmes from '../components/home/Programmes'
 import IjazahProgramme from '../components/home/Ijazah'
 import Pricing from '../components/home/Pricing'
 import FAQs from '../components/home/Faq'
-import WhyQurania from '../components/home/WHY'
+import WhyQuranile from '../components/home/WHY'
 import WhatWeDo from '../components/home/WhatWeDo'
 import What from '../components/What'
 import BookingSteps from '../components/home/Steps'
 import Hero2 from '../components/home/Hero2'
 import FooterClerics from './FooterClerics'
 import ContactForm from '../components/home/Form'
+import Footer from '../components/Footer'
 
 const Home = () => {
   
@@ -28,7 +29,7 @@ const Home = () => {
         <WhatWeDo />
         {/* <Video /> */}
         <BookingSteps />
-        {/* <WhyQurania /> */}
+        {/* <WhyQuranile /> */}
         {/* <Programmes /> */}
         {/* <IjazahProgramme /> */}
         <Pricing />
@@ -36,6 +37,7 @@ const Home = () => {
         <FAQs />
         <FooterClerics />
         <ContactForm />
+        <Footer />
     </Element>
   )
 }

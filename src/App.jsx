@@ -23,10 +23,10 @@ import Login from "./routes/Login"
 import ClericNav from "./routes/ClericNav"
 import ClericBookings from "./routes/ClericBookings"
 import SmoothScroll from "./SmoothScroll"
+import AvailabilityPicker from "./routes/DateTimePicker"
 
 
 function App() {
-
 
   const responseInterceptor = axios.interceptors.response.use((response) => {
     if (response?.data?.notification) {
@@ -72,6 +72,7 @@ function App() {
           <Route index element={<AdminClerics />} />
           <Route path="createCleric" element={<CreateClericForm />} />
           <Route path="bookings" element={<AdminBookings />} />
+          <Route path="availability" element={<AvailabilityPicker />} />
         </Route>
         <Route path="/teacher/:id" element={<ClericNav />} >
           <Route path="createCleric" element={<CreateClericForm />} />

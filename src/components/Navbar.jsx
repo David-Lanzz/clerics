@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import Touch from "./home/Touch";
 import Footer from "./Footer";
 import { scroller } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
@@ -29,14 +28,35 @@ const Navbar = () => {
 
     const handleNavigate = (link) => {
         setIsMobileMenuOpen(false);
-        scroller.scrollTo(link, { smooth: "easeInOutQuart" });
+
+        if (pathname !== "/") {
+            // Store the target section in sessionStorage
+            sessionStorage.setItem("scrollTo", link);
+            navigate("/"); // go home first
+        } else {
+            // If already on home, scroll directly
+            scroller.scrollTo(link, { smooth: "easeInOutQuart", duration: 800 });
+        }
     };
+
+    useEffect(() => {
+        // When on home page, check if we need to scroll
+        const target = sessionStorage.getItem("scrollTo");
+        if (pathname === "/" && target) {
+            setTimeout(() => {
+                scroller.scrollTo(target, { smooth: "easeInOutQuart", duration: 800 });
+                sessionStorage.removeItem("scrollTo");
+            }, 500); // wait a bit for sections to mount
+        }
+    }, [pathname]);
+
+
 
     const tabs = useMemo(() => [
         { title: "Home", link: "home" },
         { title: "About", link: "about" },
         { title: "What We Do", link: "whatwedo" },
-        { title: "Why Qurania", link: "whyqurania" },
+        { title: "Why Quranile", link: "whyquranile" },
         { title: "Booking Steps", link: "bookingsteps" },
     ], [clerics, userId]);
 
@@ -46,11 +66,11 @@ const Navbar = () => {
     const navBgColor = isScrolled ? "bg-white/70" : "bg-transparent";
 
     return (
-        <div className="w-full flex flex-col relative">
+        <div className="w-full h-full flex flex-col relative">
             {/* Navbar */}
             <div className={`w-full fixed top-0 left-0 z-[1000] backdrop-blur-md py-2 px-4 md:px-[4rem] slowMo ${navBgColor} flex justify-center`}>
                 <div className="w-full max-w-[90rem] flex justify-between items-center">
-                    <img src="/qurania.jpg" className="h-16" alt="" />
+                    <img src="/quranile.jpg" className="h-16" alt="" />
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex gap-8 items-center">
@@ -82,9 +102,8 @@ const Navbar = () => {
                         <button
                             className={`slowMo ${isScrolled || isAuthOrBookingPage ? "standardBtn" : "standardBtnLight"}`}
                             onClick={() => {
-                                scroller.scrollTo('contact', {
-                                    smooth: "easeInOutQuart"
-                                })
+                                userId ? navigate(`/booking/${userId}`) :
+                                    navigate('/login')
                             }}
                         >
                             Book Now
@@ -156,9 +175,8 @@ const Navbar = () => {
                             {/* Book Now Button */}
                             <button
                                 onClick={() => {
-                                    scroller.scrollTo('contact', {
-                                        smooth: "easeInOutQuart"
-                                    })
+                                    userId ? navigate(`/booking/${userId}`) :
+                                        navigate('/login')
                                 }}
                                 className="mt-6 py-2 px-6 bg-primary text-white rounded-lg text-lg shadow-md hover:bg-opacity-90 transition"
                             >
@@ -170,8 +188,8 @@ const Navbar = () => {
             </AnimatePresence>
 
             <Outlet />
-            {/* <Touch /> */}
-            <Footer />
+
+            {/* <Footer /> */}
         </div>
     );
 };
