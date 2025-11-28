@@ -7,7 +7,6 @@ import Cleric from "./routes/Cleric"
 import Clerics from "./routes/Clerics"
 import Passcode from "./routes/Passcode"
 import Admin from "./routes/Admin"
-import AdminClerics from "./routes/AdminClerics"
 import AdminBookings from "./routes/AdminBookings"
 import Booking from "./routes/Booking"
 import axios from "axios"
@@ -67,7 +66,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin/:id" element={<Admin />} >
-          <Route index element={<AdminClerics />} />
+          <Route index element={<AdminBookings />} />
           <Route path="createCleric" element={<CreateClericForm />} />
           <Route path="bookings" element={<AdminBookings />} />
           <Route path="availability" element={<AvailabilityPicker />} />
