@@ -17,6 +17,7 @@ import Hero2 from '../components/home/Hero2'
 import FooterClerics from './FooterClerics'
 import ContactForm from '../components/home/Form'
 import Footer from '../components/Footer'
+import SpecializedCourses from '../components/home/SpecializedCourses'
 
 const Home = () => {
   
@@ -34,6 +35,7 @@ const Home = () => {
         {/* <IjazahProgramme /> */}
         <Pricing />
         <Testimonials />
+        <SpecializedCourses />
         <FAQs />
         <FooterClerics />
         <ContactForm />
