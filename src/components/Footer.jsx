@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FaUserSecret } from 'react-icons/fa'
-import { FaInstagram, FaPhone, FaTiktok } from 'react-icons/fa6'
+import { FaFacebook, FaInstagram, FaPhone, FaTiktok } from 'react-icons/fa6'
 import { useNavigate } from 'react-router-dom'
 import { scroller } from 'react-scroll'
 
@@ -44,6 +44,7 @@ const Footer = () => {
                             <span key={index} onClick={() => handleNavigate(tab.link)}>{tab.title}</span>
                         ))}
                     </span>
+                    <a href='https://www.facebook.com/share/1JdmFwqnf7/' className='flex gap-2 items-center hover:text-[#333]' target='_blank'><FaFacebook color='lightblue' /> Follow us on Facebook</a>
                     {/* <span className="w-full flex bg-primary/40 items-center justify-end">
                         <input type="text" onChange={(e) => setEmail(e.target.value)} className="bg-transparent text-start text-textcolor flex-grow p-2 md:p-3 pl-3 md:pl-6" />
                         <button className="standardBtn" onClick={() => {
