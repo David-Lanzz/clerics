@@ -5,6 +5,7 @@ import { scroller } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes, FaChevronRight } from "react-icons/fa";
 import { getAllClerics } from "../services";
+import { Phone } from "lucide-react";
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -68,39 +69,50 @@ const Navbar = () => {
     return (
         <div className="w-full h-full flex flex-col relative">
             {/* Navbar */}
-            <div className={`w-full fixed top-0 left-0 z-[1000] backdrop-blur-md py-2 px-4 md:px-[4rem] slowMo ${navBgColor} flex justify-center`}>
-                <div className="w-full max-w-[90rem] flex justify-between items-center">
-                    <img src="/quranile.jpg" className="h-16" alt="" />
+            <div className={`w-full fixed top-0 left-0 z-[1000] backdrop-blur-md py-4 px-4 md:px-[4rem] slowMo ${navBgColor} flex justify-center`}>
+                <div className="w-full max-w-[90rem] flex-col items-center">
+                    <div className="w-full gap-8 hidden md:flex items-center justify-between">
+                        <img src="/logo.png" className="h-16" alt="" />
+                        <span className="flex gap-2 items-center">
+                            <Phone color="yellow" />
+                            <p className={` ${navTextColor}`}>Contact us Now</p>
+                            <button className="bg-yellow-400 text-[#0f2d24] font-semibold py-2 ml-4 px-4 rounded-full hover:bg-yellow-300 transition">
+                               Call Us
+                            </button>
+                        </span>
+                    </div>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden md:flex gap-8 items-center">
-                        {tabs.map((tab, index) => (
-                            <div key={index} className="relative group">
-                                <span
-                                    onClick={() => handleNavigate(tab.link)}
-                                    className={`cursor-pointer font-medium slowMo ${navTextColor}`}
-                                >
-                                    {tab.title}
-                                </span>
+                    <div className="flex justify-between gap-8">
+                        <nav className="hidden md:flex gap-8 items-center">
+                            {tabs.map((tab, index) => (
+                                <div key={index} className="relative group">
+                                    <span
+                                        onClick={() => handleNavigate(tab.link)}
+                                        className={`cursor-pointer slowMo ${navTextColor}`}
+                                    >
+                                        {tab.title}
+                                    </span>
 
-                                {/* Dropdown for Clerics */}
-                                {tab.list?.length > 0 && (
-                                    <div className="absolute top-[2rem] left-0 z-10 bg-goldCardBg border border-primary rounded-md opacity-0 group-hover:opacity-100 transition-opacity p-2 w-max">
-                                        {clerics.map((cleric, i) => (
-                                            <span
-                                                key={i}
-                                                onClick={() => navigate(`/cleric/${cleric.id}`)}
-                                                className="flex justify-between gap-4 items-center py-1 px-2 cursor-pointer hover:underline"
-                                            >
-                                                {cleric.name} <FaChevronRight />
-                                            </span>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                        ))}
+                                    {/* Dropdown for Clerics */}
+                                    {tab.list?.length > 0 && (
+                                        <div className="absolute top-[2rem] left-0 z-10 bg-goldCardBg border border-primary rounded-md opacity-0 group-hover:opacity-100 transition-opacity p-2 w-max">
+                                            {clerics.map((cleric, i) => (
+                                                <span
+                                                    key={i}
+                                                    onClick={() => navigate(`/cleric/${cleric.id}`)}
+                                                    className="flex justify-between gap-4 items-center py-1 px-2 cursor-pointer hover:underline"
+                                                >
+                                                    {cleric.name} <FaChevronRight />
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </nav>
                         <button
-                            className={`slowMo ${isScrolled || isAuthOrBookingPage ? "standardBtn" : "standardBtnLight"}`}
+                            className={`slowMo hidden md:block border border-yellow-400 font-semibold py-3 px-8 rounded-full text-yellow-300 transition`}
                             onClick={() => {
                                 userId ? navigate(`/booking/${userId}`) :
                                     navigate('/login')
@@ -108,7 +120,7 @@ const Navbar = () => {
                         >
                             Book Now
                         </button>
-                    </nav>
+                    </div>
 
                     {/* Mobile Menu Button */}
                     <span className={`md:hidden slowMo ${navTextColor} text-2xl cursor-pointer`} onClick={() => setIsMobileMenuOpen(true)}>
@@ -149,7 +161,7 @@ const Navbar = () => {
                                     <div key={index}>
                                         <span
                                             onClick={() => handleNavigate(tab.link)}
-                                            className="text-lg font-medium cursor-pointer hover:text-primary transition-colors"
+                                            className="text-lg cursor-pointer hover:text-primary transition-colors"
                                         >
                                             {tab.title}
                                         </span>

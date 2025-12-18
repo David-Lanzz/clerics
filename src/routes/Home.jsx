@@ -23,7 +23,7 @@ const Home = () => {
   
   return (
     <Element name='home' className=' flex flex-col overflow-hidden '>
-        <Hero />
+        <Hero2 />
         <What />
         <About />
         {/* <Clerics /> */}
