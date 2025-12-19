@@ -8,9 +8,9 @@ const Hero2 = () => {
   const userId = useMemo(() => localStorage.getItem('userId'), []);
 
   return (
-    <section className="bg-gradient-to-r pt-14 from-[#0C352A] via-[#0c352afa] to-[#0C352A] text-white h-screen min-h-screen flex items-center justify-center px-6">
+    <section className="bg-gradient-to-r pt-14 mb-32 from-[#0C352A] via-[#0c352afa] to-[#0C352A] text-white h-screen min-h-screen flex items-center justify-center px-6">
       <div className="max-w-[90rem] h-[80%] md:mt-32 w-full flex flex-col md:flex-row gap-10 justify-center items-center">
-        <div className="w-full md:w-3/5 flex-grow relative p-8 rounded-3xl bg-[#0D2519] h-full flex flex-col justify-between">
+        <div className="w-full mt-[15rem] md:mt-0 md:w-3/5 flex-grow relative p-8 rounded-3xl bg-[#0D2519] h-full flex flex-col justify-between">
           <h1 className="text-3xl md:text-8xl font-bold text-[#FFFFFFCC]"><span className="text-[#FFFFFF66]">Specialized <br /></span> Courses</h1>
           <div className="flex flex-col relative z-10 gap-2">
             {
