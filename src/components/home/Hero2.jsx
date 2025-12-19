@@ -6,9 +6,9 @@ const Hero2 = () => {
 
   const navigate = useNavigate()
   const userId = useMemo(() => localStorage.getItem('userId'), []);
-  
+
   return (
-    <section className="bg-gradient-to-r from-[#0C352A] via-[#0c352afa] to-[#0C352A] text-white h-screen min-h-screen flex items-center justify-center px-6">
+    <section className="bg-gradient-to-r pt-14 from-[#0C352A] via-[#0c352afa] to-[#0C352A] text-white h-screen min-h-screen flex items-center justify-center px-6">
       <div className="max-w-[90rem] h-[80%] md:mt-32 w-full flex flex-col md:flex-row gap-10 justify-center items-center">
         <div className="w-full md:w-3/5 flex-grow relative p-8 rounded-3xl bg-[#0D2519] h-full flex flex-col justify-between">
           <h1 className="text-3xl md:text-8xl font-bold text-[#FFFFFFCC]"><span className="text-[#FFFFFF66]">Specialized <br /></span> Courses</h1>
@@ -45,8 +45,8 @@ const Hero2 = () => {
           </div>
           <img src="/fawsiyyah.png" alt="" className="absolute w-1/2 md:w-auto right-0 bottom-0" />
         </div>
-        <div className="hidden md:block w-max relative h-full rounded-3xl overflow-hidden">
-          <img src="/imamic.png" className="h-full rounded-3xl" alt="" />
+        <div className="w-full md:w-max relative h-[25rem] md:h-full rounded-3xl">
+          <img src="/imamic.png" className="h-full w-full rounded-3xl" alt="" />
         </div>
       </div>
     </section>

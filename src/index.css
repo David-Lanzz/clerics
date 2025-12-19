@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
 
+/* Sticky Navbar class for when scrolled past 100vh */
+.sticky-navbar {
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+    border-bottom: 1px solid #f3e8ff;
+    animation: stickyFadeIn 0.4s;
+}
+
+@keyframes stickyFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

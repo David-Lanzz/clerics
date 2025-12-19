@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import Footer from "./Footer";
 import { scroller } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes, FaChevronRight } from "react-icons/fa";
@@ -77,7 +76,7 @@ const Navbar = () => {
                             <Phone color="yellow" />
                             <p className={` ${navTextColor}`}>Contact us Now</p>
                             <button className="bg-yellow-400 text-[#0f2d24] font-semibold py-2 ml-4 px-4 rounded-full hover:bg-yellow-300 transition">
-                               Call Us
+                                Call Us
                             </button>
                         </span>
                     </div>
@@ -123,9 +122,23 @@ const Navbar = () => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <span className={`md:hidden slowMo ${navTextColor} text-2xl cursor-pointer`} onClick={() => setIsMobileMenuOpen(true)}>
-                        <FaBars />
-                    </span>
+                    <div className="w-full md:hidden flex mb-2 justify-between items-center">
+                        <span className="flex justify-between w-full text-sm gap-2 items-center">
+                            <span className="flex gap-2 items-center">
+                                <Phone color="yellow" />
+                                <p className={` ${navTextColor}`}>Contact us Now</p>
+                            </span>
+                            <button className="bg-yellow-400 text-[#0f2d24] font-semibold py-2 ml-4 px-4 rounded-sm hover:bg-yellow-300 transition">
+                                Call Us
+                            </button>
+                        </span>
+                    </div>
+                    <div className="w-full md:hidden flex justify-between items-center">
+                        <img src="/logo.png" className="h-8" alt="" />
+                        <span className={`md:hidden slowMo ${navTextColor} text-2xl cursor-pointer`} onClick={() => setIsMobileMenuOpen(true)}>
+                            <FaBars />
+                        </span>
+                    </div>
                 </div>
             </div>
 
