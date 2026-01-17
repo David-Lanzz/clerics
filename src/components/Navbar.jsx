@@ -71,7 +71,7 @@ const Navbar = () => {
             <div className={`w-full fixed top-0 left-0 z-[1000] backdrop-blur-md py-4 px-4 md:px-[4rem] slowMo ${navBgColor} flex justify-center`}>
                 <div className="w-full max-w-[90rem] flex-col items-center">
                     <div className="w-full gap-8 hidden md:flex items-center justify-between">
-                        <img src="/logo.png" className="h-16" alt="" />
+                        <img src="/logo.png" className="h-20" alt="" />
                         <span className="flex gap-2 items-center">
                             <Phone color="yellow" />
                             <p className={` ${navTextColor}`}>Contact us Now</p>
@@ -134,7 +134,7 @@ const Navbar = () => {
                         </span>
                     </div>
                     <div className="w-full md:hidden flex justify-between items-center">
-                        <img src="/logo.png" className="h-8" alt="" />
+                        <img src="/logo.png" className="h-12" alt="" />
                         <span className={`md:hidden slowMo ${navTextColor} text-2xl cursor-pointer`} onClick={() => setIsMobileMenuOpen(true)}>
                             <FaBars />
                         </span>
