@@ -55,7 +55,7 @@ const Footer = () => {
                         }}>Book Now</button>
                     </span> */}
                     <span className="flex gap-2 items-center">
-                        <p>©2023 H&T . All rights reserved</p>
+                        <p>©{new Date().getFullYear()} H&T . All rights reserved</p>
                         <FaUserSecret className='cursor-pointer' size={20} onClick={() => navigate('/authorizeAdmin')} />
                     </span>
                 </div>

@@ -75,9 +75,9 @@ const Navbar = () => {
                         <span className="flex gap-2 items-center">
                             <Phone color="yellow" />
                             <p className={` ${navTextColor}`}>Contact us Now</p>
-                            <button className="bg-yellow-400 text-[#0f2d24] font-semibold py-2 ml-4 px-4 rounded-full hover:bg-yellow-300 transition">
+                            <a href='tel:+447304330210' className="bg-yellow-400 text-[#0f2d24] font-semibold py-2 ml-4 px-4 rounded-full hover:bg-yellow-300 transition">
                                 Call Us
-                            </button>
+                            </a>
                         </span>
                     </div>
 
@@ -128,9 +128,9 @@ const Navbar = () => {
                                 <Phone color="yellow" />
                                 <p className={` ${navTextColor}`}>Contact us Now</p>
                             </span>
-                            <button className="bg-yellow-400 text-[#0f2d24] font-semibold py-2 ml-4 px-4 rounded-sm hover:bg-yellow-300 transition">
+                            <a href='tel:+447304330210' className="bg-yellow-400 text-[#0f2d24] font-semibold py-2 ml-4 px-4 rounded-sm hover:bg-yellow-300 transition">
                                 Call Us
-                            </button>
+                            </a>
                         </span>
                     </div>
                     <div className="w-full md:hidden flex justify-between items-center">
