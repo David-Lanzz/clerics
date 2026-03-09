@@ -20,7 +20,7 @@ export default function ContactForm() {
         setResponseMessage("Loading...");
 
         try {
-            const response = await fetch("https://formspree.io/f/movwzypp", {
+            const response = await fetch("https://formspree.io/f/mojkjzvv", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
